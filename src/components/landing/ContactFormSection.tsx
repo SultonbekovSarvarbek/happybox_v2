@@ -17,6 +17,8 @@ const frequencies = ['Еженедельно', 'Ежемесячно', 'Квар
 
 export function ContactFormSection() {
   const [submitted, setSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [formData, setFormData] = useState({
     company: '',
     contact: '',
@@ -28,10 +30,31 @@ export function ContactFormSection() {
     comment: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
+    setIsLoading(true)
+    setError(null)
+
+    try {
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send request')
+      }
+
+      setSubmitted(true)
+    } catch (err) {
+      setError('Произошла ошибка при отправке. Пожалуйста, попробуйте снова.')
+      console.error('Error submitting form:', err)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -195,13 +218,24 @@ export function ContactFormSection() {
             />
           </div>
 
+          {error && (
+            <p className="text-center text-red-500 text-sm">{error}</p>
+          )}
+
           <Button
             type="submit"
             size="lg"
-            className="w-full bg-[#0A84FF] hover:bg-blue-600 text-white py-6 text-lg rounded-xl"
+            disabled={isLoading}
+            className="w-full bg-[#0A84FF] hover:bg-blue-600 text-white py-6 text-lg rounded-xl disabled:opacity-50"
           >
-            <Send className="mr-2 h-5 w-5" />
-            Запросить предложение
+            {isLoading ? (
+              'Отправка...'
+            ) : (
+              <>
+                <Send className="mr-2 h-5 w-5" />
+                Запросить предложение
+              </>
+            )}
           </Button>
 
           <p className="text-center text-gray-500 text-sm">

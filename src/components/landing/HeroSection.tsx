@@ -25,6 +25,8 @@ const frequencies = ['Еженедельно', 'Ежемесячно', 'Квар
 export function HeroSection() {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [formData, setFormData] = useState({
     company: '',
     contact: '',
@@ -35,10 +37,31 @@ export function HeroSection() {
     frequency: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
+    setIsLoading(true)
+    setError(null)
+
+    try {
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send request')
+      }
+
+      setSubmitted(true)
+    } catch (err) {
+      setError('Произошла ошибка при отправке. Пожалуйста, попробуйте снова.')
+      console.error('Error submitting form:', err)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,6 +74,7 @@ export function HeroSection() {
 
   const handleOpenDialog = () => {
     setSubmitted(false)
+    setError(null)
     setIsDialogOpen(true)
   }
 
@@ -240,12 +264,23 @@ export function HeroSection() {
                   </div>
                 </div>
 
+                {error && (
+                  <p className="text-center text-red-500 text-sm">{error}</p>
+                )}
+
                 <Button
                   type="submit"
-                  className="w-full bg-[#0A84FF] hover:bg-blue-600 text-white py-5"
+                  disabled={isLoading}
+                  className="w-full bg-[#0A84FF] hover:bg-blue-600 text-white py-5 disabled:opacity-50"
                 >
-                  <Send className="mr-2 h-4 w-4" />
-                  Отправить заявку
+                  {isLoading ? (
+                    'Отправка...'
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Отправить заявку
+                    </>
+                  )}
                 </Button>
 
                 <p className="text-center text-gray-500 text-xs">
