@@ -10,7 +10,11 @@ const PORT = process.env.PORT || 3001
 
 const resend = new Resend(process.env.RESEND_KEY)
 
-app.use(cors())
+app.use(cors({
+  origin: ['http://happybox.uz', 'https://happybox.uz', 'http://www.happybox.uz', 'https://www.happybox.uz', 'http://localhost:5173'],
+  methods: ['GET', 'POST'],
+  credentials: true
+}))
 app.use(express.json())
 
 interface ContactFormData {
