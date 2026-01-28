@@ -32,7 +32,7 @@ app.post('/api/contact', async (req, res) => {
 
     // Send notification email to admin
     await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'happy@happybox.uz',
       to: 'sarvarsarvar944@gmail.com',
       subject: `Новая заявка от ${company}`,
       html: `
@@ -78,7 +78,7 @@ app.post('/api/contact', async (req, res) => {
 
     // Send confirmation email to client
     await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'happy@happybox.uz',
       to: email,
       subject: 'Спасибо за заявку - HappyBox',
       html: `
