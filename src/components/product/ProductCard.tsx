@@ -1,4 +1,4 @@
-import { Product } from '@/types';
+import type { Product } from '@/types';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Plus } from 'lucide-react';

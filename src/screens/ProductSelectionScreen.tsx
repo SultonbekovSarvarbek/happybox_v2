@@ -7,7 +7,7 @@ import { ProductDetailModal } from '@/components/product/ProductDetailModal';
 import { useNavigation } from '@/context/NavigationContext';
 import { useCart } from '@/context/CartContext';
 import { categories, products } from '@/data/products';
-import { Product } from '@/types';
+import type { Product } from '@/types';
 
 export function ProductSelectionScreen() {
   const { goBack, navigateTo } = useNavigation();

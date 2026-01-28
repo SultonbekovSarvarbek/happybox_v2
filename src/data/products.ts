@@ -1,4 +1,4 @@
-import { Category, Product } from '@/types';
+import type { Category, Product } from '@/types';
 
 export const categories: Category[] = [
   { id: 'all', nameRu: 'Все' },
