@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "concurrently \"vite\" \"yarn tsx server.ts\"",
     "dev:client": "vite",
+    "start:api": "tsx server.ts",
     "dev:server": "yarn tsx server.ts",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
