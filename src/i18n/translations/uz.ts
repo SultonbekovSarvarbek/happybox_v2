@@ -108,6 +108,11 @@ export const uz: Record<TranslationKey, string> = {
   'footer.privacy': 'Maxfiylik siyosati',
   'footer.business': 'Biznes uchun',
   'footer.contacts': 'Kontaktlar',
+  'footer.app': 'Ilova',
+  'footer.downloadApp': 'iOS uchun yuklab olish',
+
+  // Hero
+  'hero.appBadge': 'Ilovani yuklab olish',
 
   // Landing Screen
   'landing.subtitle': 'Sovg\'a qutisini 2 daqiqada yig\'ing',

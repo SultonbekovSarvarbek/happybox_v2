@@ -106,6 +106,11 @@ export const ru = {
   'footer.privacy': 'Политика конфиденциальности',
   'footer.business': 'Для бизнеса',
   'footer.contacts': 'Контакты',
+  'footer.app': 'Приложение',
+  'footer.downloadApp': 'Скачать для iOS',
+
+  // Hero
+  'hero.appBadge': 'Скачать приложение',
 
   // Landing Screen
   'landing.subtitle': 'Соберите подарочную коробку за 2 минуты',
