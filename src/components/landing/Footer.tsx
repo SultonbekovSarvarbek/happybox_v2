@@ -2,7 +2,7 @@ import { Gift } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer id="for-business" className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
