@@ -6,12 +6,14 @@ import { ProductCard } from '@/components/product/ProductCard';
 import { ProductDetailModal } from '@/components/product/ProductDetailModal';
 import { useNavigation } from '@/context/NavigationContext';
 import { useCart } from '@/context/CartContext';
+import { useLanguage } from '@/i18n/LanguageContext';
 import { categories, products } from '@/data/products';
 import type { Product } from '@/types';
 
 export function ProductSelectionScreen() {
   const { goBack, navigateTo } = useNavigation();
   const { totalItems, totalPrice } = useCart();
+  const { t, getName } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
@@ -27,7 +29,7 @@ export function ProductSelectionScreen() {
         <Button variant="ghost" size="icon" onClick={goBack}>
           <ChevronLeft className="h-6 w-6" />
         </Button>
-        <h1 className="text-lg font-semibold">Выбор товаров</h1>
+        <h1 className="text-lg font-semibold">{t('products.title')}</h1>
         <Button
           variant="ghost"
           size="icon"
@@ -57,7 +59,7 @@ export function ProductSelectionScreen() {
               }`}
               onClick={() => setSelectedCategory(category.id)}
             >
-              {category.nameRu}
+              {getName(category)}
             </Button>
           ))}
         </div>
@@ -66,7 +68,7 @@ export function ProductSelectionScreen() {
       {/* Products Grid */}
       <div className="flex-1 p-4">
         <h2 className="text-xl font-bold mb-4 text-gray-900">
-          {categories.find((c) => c.id === selectedCategory)?.nameRu}
+          {getName(categories.find((c) => c.id === selectedCategory) || categories[0])}
         </h2>
         <div className="grid grid-cols-2 gap-3">
           {filteredProducts.map((product) => (
@@ -87,10 +89,10 @@ export function ProductSelectionScreen() {
             onClick={() => navigateTo('cart')}
           >
             <span className="font-medium">
-              {totalItems} товар · {totalPrice.toLocaleString()} сум
+              {totalItems} {t('products.items')} &middot; {totalPrice.toLocaleString()} {t('products.currency')}
             </span>
             <div className="flex items-center gap-2">
-              <span>Просмотр коробки</span>
+              <span>{t('products.viewBox')}</span>
               <ArrowRight className="h-5 w-5" />
             </div>
           </Button>

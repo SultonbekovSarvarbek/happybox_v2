@@ -1,9 +1,11 @@
 import { Gift } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigation } from '@/context/NavigationContext';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function LandingScreen() {
   const { navigateTo } = useNavigation();
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-between p-6 bg-[#E8F4FF]">
@@ -15,7 +17,7 @@ export function LandingScreen() {
         <div className="text-center space-y-2">
           <h1 className="text-4xl font-bold text-gray-900">HappyBox</h1>
           <p className="text-gray-600 text-base px-4">
-            Соберите подарочную коробку за 2 минуты
+            {t('landing.subtitle')}
           </p>
         </div>
 
@@ -24,18 +26,18 @@ export function LandingScreen() {
           onClick={() => navigateTo('products')}
         >
           <Gift className="w-5 h-5 mr-2" />
-          Создать коробку
+          {t('landing.cta')}
         </Button>
       </div>
 
       <div className="flex flex-wrap justify-center gap-2 pb-4">
-        <span className="text-xs text-gray-500">День рождения</span>
-        <span className="text-xs text-gray-400">·</span>
-        <span className="text-xs text-gray-500">Любимым</span>
-        <span className="text-xs text-gray-400">·</span>
-        <span className="text-xs text-gray-500">Просто так</span>
-        <span className="text-xs text-gray-400">·</span>
-        <span className="text-xs text-gray-500">Праздники</span>
+        <span className="text-xs text-gray-500">{t('landing.birthday')}</span>
+        <span className="text-xs text-gray-400">&middot;</span>
+        <span className="text-xs text-gray-500">{t('landing.loved')}</span>
+        <span className="text-xs text-gray-400">&middot;</span>
+        <span className="text-xs text-gray-500">{t('landing.justBecause')}</span>
+        <span className="text-xs text-gray-400">&middot;</span>
+        <span className="text-xs text-gray-500">{t('landing.holidays')}</span>
       </div>
     </div>
   );

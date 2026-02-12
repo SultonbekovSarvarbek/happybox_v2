@@ -3,6 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 interface ProductCardProps {
   product: Product;
@@ -10,6 +11,9 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, onClick }: ProductCardProps) {
+  const { t, getName, language } = useLanguage();
+  const badge = language === 'uz' && product.badgeUz ? product.badgeUz : product.badge;
+
   return (
     <Card
       className="overflow-hidden cursor-pointer hover:shadow-md transition-shadow bg-white"
@@ -18,12 +22,12 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
       <div className="relative">
         <img
           src={product.image}
-          alt={product.nameRu}
+          alt={getName(product)}
           className="w-full h-32 object-cover"
         />
-        {product.badge && (
+        {badge && (
           <Badge className="absolute top-2 left-2 bg-[#0A84FF] text-white text-xs">
-            {product.badge}
+            {badge}
           </Badge>
         )}
         {product.weight && (
@@ -34,11 +38,11 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
       </div>
       <div className="p-3 space-y-2">
         <h3 className="text-sm font-medium line-clamp-2 min-h-[40px]">
-          {product.nameRu}
+          {getName(product)}
         </h3>
         <div className="flex items-center justify-between">
           <p className="text-[#0A84FF] font-semibold">
-            {product.price.toLocaleString()} сум
+            {product.price.toLocaleString()} {t('products.currency')}
           </p>
           <Button
             size="icon"

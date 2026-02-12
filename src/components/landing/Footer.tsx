@@ -1,10 +1,13 @@
 import { Gift } from 'lucide-react'
+import { useLanguage } from '@/i18n/LanguageContext'
 
 interface FooterProps {
   onNavigateToPrivacy?: () => void;
 }
 
 export function Footer({ onNavigateToPrivacy }: FooterProps) {
+  const { t } = useLanguage()
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
@@ -18,14 +21,14 @@ export function Footer({ onNavigateToPrivacy }: FooterProps) {
               <span className="text-xl font-bold tracking-tight">HappyBox</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Платформа подарочных сертификатов от лучших партнёров.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Links */}
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-widest text-gray-400 mb-4">
-              Информация
+              {t('footer.info')}
             </h4>
             <ul className="space-y-3">
               <li>
@@ -33,7 +36,7 @@ export function Footer({ onNavigateToPrivacy }: FooterProps) {
                   onClick={onNavigateToPrivacy}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Политика конфиденциальности
+                  {t('footer.privacy')}
                 </button>
               </li>
               <li>
@@ -41,7 +44,7 @@ export function Footer({ onNavigateToPrivacy }: FooterProps) {
                   href="#for-business"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Для бизнеса
+                  {t('footer.business')}
                 </a>
               </li>
               <li>
@@ -49,7 +52,7 @@ export function Footer({ onNavigateToPrivacy }: FooterProps) {
                   href="#contact"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Контакты
+                  {t('footer.contacts')}
                 </a>
               </li>
             </ul>
@@ -58,13 +61,20 @@ export function Footer({ onNavigateToPrivacy }: FooterProps) {
           {/* Contact */}
           <div id="contact">
             <h4 className="font-semibold text-sm uppercase tracking-widest text-gray-400 mb-4">
-              Контакты
+              {t('footer.contacts')}
             </h4>
             <a
               href="mailto:info@happybox.uz"
               className="text-gray-400 hover:text-white transition-colors text-lg"
             >
               info@happybox.uz
+            </a>
+            <br />
+            <a
+              href="tel:+998940444581"
+              className="text-gray-400 hover:text-white transition-colors text-lg"
+            >
+              +998 94 044 45 81
             </a>
           </div>
         </div>

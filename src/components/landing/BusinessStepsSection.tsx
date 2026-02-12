@@ -1,20 +1,25 @@
+import { useLanguage } from '@/i18n/LanguageContext'
+import type { TranslationKey } from '@/i18n/translations/ru'
+
 const steps = [
-  { num: '1', title: 'Оставляете заявку', description: 'Заполните короткую форму на сайте.' },
-  { num: '2', title: 'Подключаем ваш бизнес', description: 'Мы настраиваем ваш кабинет партнёра.' },
-  { num: '3', title: 'Вы создаёте сертификаты', description: 'Добавляете предложения, цены и описания.' },
-  { num: '4', title: 'Пользователи покупают', description: 'Сертификаты появляются в каталоге HappyBox.' },
+  { num: '1', titleKey: 'businessSteps.step1.title' as TranslationKey, descriptionKey: 'businessSteps.step1.description' as TranslationKey },
+  { num: '2', titleKey: 'businessSteps.step2.title' as TranslationKey, descriptionKey: 'businessSteps.step2.description' as TranslationKey },
+  { num: '3', titleKey: 'businessSteps.step3.title' as TranslationKey, descriptionKey: 'businessSteps.step3.description' as TranslationKey },
+  { num: '4', titleKey: 'businessSteps.step4.title' as TranslationKey, descriptionKey: 'businessSteps.step4.description' as TranslationKey },
 ]
 
 export function BusinessStepsSection() {
+  const { t } = useLanguage()
+
   return (
     <section className="py-20 sm:py-28 px-4 sm:px-6 bg-gray-50">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-[#0A84FF] font-semibold text-sm uppercase tracking-widest mb-3">
-            Подключение
+            {t('businessSteps.label')}
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900">
-            Как это работает
+            {t('businessSteps.title')}
           </h2>
         </div>
 
@@ -25,8 +30,8 @@ export function BusinessStepsSection() {
                 {s.num}
               </span>
               <div>
-                <h3 className="text-base font-semibold text-gray-900 mb-1">{s.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{s.description}</p>
+                <h3 className="text-base font-semibold text-gray-900 mb-1">{t(s.titleKey)}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{t(s.descriptionKey)}</p>
               </div>
             </div>
           ))}

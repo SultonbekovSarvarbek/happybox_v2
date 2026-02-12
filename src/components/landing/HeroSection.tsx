@@ -1,28 +1,22 @@
-import { Gift } from 'lucide-react'
+import { useLanguage } from '@/i18n/LanguageContext'
 
 export function HeroSection() {
+  const { t } = useLanguage()
+
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 sm:px-6 bg-white overflow-hidden">
+    <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-4 sm:px-6 bg-white overflow-hidden">
       {/* Subtle background decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-blue-50 to-transparent rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-50 to-transparent rounded-full translate-y-1/2 -translate-x-1/3 pointer-events-none" />
 
       <div className="relative max-w-2xl mx-auto text-center">
-        {/* Logo */}
-        <div className="inline-flex items-center gap-2.5 mb-12">
-          <div className="w-10 h-10 bg-[#0A84FF] rounded-xl flex items-center justify-center">
-            <Gift className="w-5 h-5 text-white" />
-          </div>
-          <span className="text-xl font-semibold text-gray-900">HappyBox</span>
-        </div>
-
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 leading-[1.2] tracking-tight mb-5">
-          Подарочные сертификаты —{' '}
-          <span className="text-[#0A84FF]">легко и быстро</span>
+          {t('hero.title1')}{' '}
+          <span className="text-[#0A84FF]">{t('hero.title2')}</span>
         </h1>
 
         <p className="text-base sm:text-lg text-gray-400 max-w-md mx-auto mb-10 leading-relaxed">
-          Выберите подарок и отправьте близким за пару минут
+          {t('hero.subtitle')}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -30,13 +24,13 @@ export function HeroSection() {
             href="#categories"
             className="inline-flex items-center justify-center bg-[#0A84FF] hover:bg-[#0070E0] text-white px-7 py-3.5 text-sm sm:text-base font-medium rounded-xl shadow-lg shadow-blue-500/15 transition-all hover:shadow-xl hover:shadow-blue-500/25 cursor-pointer"
           >
-            Смотреть сертификаты
+            {t('hero.cta')}
           </a>
           <a
             href="#for-business"
             className="inline-flex items-center justify-center border border-gray-200 hover:border-[#0A84FF] text-gray-700 hover:text-[#0A84FF] px-7 py-3.5 text-sm sm:text-base font-medium rounded-xl transition-all cursor-pointer"
           >
-            Для бизнеса
+            {t('hero.business')}
           </a>
         </div>
       </div>
