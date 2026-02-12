@@ -1,6 +1,10 @@
 import { Gift } from 'lucide-react'
 
-export function Footer() {
+interface FooterProps {
+  onNavigateToPrivacy?: () => void;
+}
+
+export function Footer({ onNavigateToPrivacy }: FooterProps) {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
@@ -25,12 +29,12 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#privacy"
+                <button
+                  onClick={onNavigateToPrivacy}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Политика конфиденциальности
-                </a>
+                </button>
               </li>
               <li>
                 <a

@@ -26,4 +26,4 @@ export interface DeliveryInfo {
   message?: string;
 }
 
-export type Screen = 'landing' | 'products' | 'cart' | 'checkout' | 'success';
+export type Screen = 'landing' | 'products' | 'cart' | 'checkout' | 'success' | 'privacy';
