@@ -157,10 +157,12 @@ export function PrivacyPolicyScreen({ onBack }: PrivacyPolicyScreenProps) {
           <p className="text-gray-600 leading-relaxed">
             {t('privacy.s7.note')}{' '}
             <a
-              href="mailto:info@happybox.uz"
+              href="https://t.me/happybox_manager"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#0A84FF] hover:underline"
             >
-              info@happybox.uz
+              @happybox_manager
             </a>
             {' / '}
             <a
@@ -202,10 +204,12 @@ export function PrivacyPolicyScreen({ onBack }: PrivacyPolicyScreenProps) {
           </p>
           <p className="mt-2">
             <a
-              href="mailto:info@happybox.uz"
+              href="https://t.me/happybox_manager"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#0A84FF] hover:underline font-medium"
             >
-              info@happybox.uz
+              @happybox_manager
             </a>
             <br />
             <a

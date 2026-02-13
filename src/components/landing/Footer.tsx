@@ -64,10 +64,12 @@ export function Footer({ onNavigateToPrivacy }: FooterProps) {
               {t('footer.contacts')}
             </h4>
             <a
-              href="mailto:info@happybox.uz"
+              href="https://t.me/happybox_manager"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors text-lg"
             >
-              info@happybox.uz
+              @happybox_manager
             </a>
             <br />
             <a

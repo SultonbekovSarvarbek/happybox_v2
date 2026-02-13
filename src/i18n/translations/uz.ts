@@ -166,7 +166,7 @@ export const uz: Record<TranslationKey, string> = {
   'privacy.s7.title': '7. Foydalanuvchi huquqlari',
   'privacy.s7.intro': 'Foydalanuvchi quyidagi huquqlarga ega:',
   'privacy.s7.items': 'o\'z ma\'lumotlari haqida so\'rov yuborish|ma\'lumotlarni tuzatishni talab qilish|ma\'lumotlarni o\'chirishni talab qilish (agar qonunga zid bo\'lmasa)|qayta ishlashga rozilikni qaytarib olish',
-  'privacy.s7.note': 'So\'rovni quyidagi email-ga yuborish mumkin:',
+  'privacy.s7.note': 'So\'rovni Telegram orqali yuborish mumkin:',
   'privacy.s8.title': '8. Tashqi xizmatlarga havolalar',
   'privacy.s8.content': 'Xizmatda hamkorlar saytlariga havolalar bo\'lishi mumkin. HappyBox tashqi saytlarning maxfiylik siyosati uchun javobgar emas.',
   'privacy.s9.title': '9. Siyosatni o\'zgartirish',

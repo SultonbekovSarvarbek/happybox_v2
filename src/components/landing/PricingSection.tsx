@@ -100,7 +100,9 @@ export function PricingSection() {
         <div className="text-center mt-14">
           <p className="text-gray-400 text-sm mb-5">{t('pricing.ready')}</p>
           <a
-            href="mailto:info@happybox.uz"
+            href="https://t.me/happybox_manager"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-[#0A84FF] hover:bg-[#0070E0] text-white px-8 py-3.5 text-base font-medium rounded-xl shadow-lg shadow-blue-500/15 transition-all hover:shadow-xl hover:shadow-blue-500/25"
           >
             {t('pricing.cta')}
