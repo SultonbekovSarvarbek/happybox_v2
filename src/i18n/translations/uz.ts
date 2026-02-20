@@ -98,7 +98,7 @@ export const uz: Record<TranslationKey, string> = {
   'pricing.terms': 'Shartlar',
   'pricing.term1': 'Sotuvdan komissiya yo\'q',
   'pricing.term2': 'Joylashtirishni istalgan paytda to\'xtatish mumkin',
-  'pricing.term3': 'Obuna 30 kunlik platformaga kirish uchun to\'lanadi',
+  'pricing.term3': 'Obuna bir oyga platformaga kirish uchun to\'lanadi',
   'pricing.ready': 'Ulanishga tayyormisiz?',
   'pricing.cta': 'Ariza qoldirish',
 
