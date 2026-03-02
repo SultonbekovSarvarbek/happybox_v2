@@ -1,4 +1,5 @@
 import { useLanguage } from '@/i18n/LanguageContext'
+import { track } from '@/lib/amplitude'
 
 export function HeroSection() {
   const { t } = useLanguage()
@@ -22,12 +23,14 @@ export function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
             href="#categories"
+            onClick={() => track('hero_cta_clicked')}
             className="inline-flex items-center justify-center bg-[#0A84FF] hover:bg-[#0070E0] text-white px-7 py-3.5 text-sm sm:text-base font-medium rounded-xl shadow-lg shadow-blue-500/15 transition-all hover:shadow-xl hover:shadow-blue-500/25 cursor-pointer"
           >
             {t('hero.cta')}
           </a>
           <a
             href="#for-business"
+            onClick={() => track('hero_business_clicked')}
             className="inline-flex items-center justify-center border border-gray-200 hover:border-[#0A84FF] text-gray-700 hover:text-[#0A84FF] px-7 py-3.5 text-sm sm:text-base font-medium rounded-xl transition-all cursor-pointer"
           >
             {t('hero.business')}
@@ -38,6 +41,7 @@ export function HeroSection() {
           href="https://apps.apple.com/uz/app/happybox-gifts/id6758584836"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => track('app_download_clicked')}
           className="inline-flex items-center gap-2 mt-6 text-sm text-gray-400 hover:text-[#0A84FF] transition-colors"
         >
           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">

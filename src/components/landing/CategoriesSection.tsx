@@ -1,6 +1,7 @@
 import { Wand2, Sparkles, ClipboardList, UtensilsCrossed, BookOpen, Activity, Smile, Plane, Car, Baby, Home } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 import type { TranslationKey } from '@/i18n/translations/ru'
+import { track } from '@/lib/amplitude'
 
 const categories = [
   {
@@ -80,6 +81,7 @@ export function CategoriesSection() {
             <a
               key={cat.titleKey}
               href="#"
+              onClick={() => track('category_clicked', { category: cat.titleKey })}
               className="group flex flex-col items-center gap-5 p-6 sm:p-8 rounded-2xl border border-gray-100 hover:border-[#0A84FF]/20 hover:shadow-lg transition-all cursor-pointer"
             >
               <div className={`w-16 h-16 sm:w-[88px] sm:h-[88px] rounded-2xl ${cat.color} flex items-center justify-center transition-colors`}>

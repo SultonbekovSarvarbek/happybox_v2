@@ -1,6 +1,7 @@
 import { Check, Instagram } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 import type { TranslationKey } from '@/i18n/translations/ru'
+import { track } from '@/lib/amplitude'
 
 const plans = [
   {
@@ -125,6 +126,7 @@ export function PricingSection() {
             href="https://t.me/happybox_manager"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track('pricing_cta_clicked')}
             className="inline-flex items-center justify-center bg-[#0A84FF] hover:bg-[#0070E0] text-white px-8 py-3.5 text-base font-medium rounded-xl shadow-lg shadow-blue-500/15 transition-all hover:shadow-xl hover:shadow-blue-500/25"
           >
             {t('pricing.cta')}

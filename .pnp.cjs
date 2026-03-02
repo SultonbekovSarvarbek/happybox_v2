@@ -28,6 +28,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@amplitude/analytics-browser", "npm:2.35.4"],\
           ["@eslint/js", "npm:9.39.2"],\
           ["@radix-ui/react-dialog", "virtual:67ccad33dc334aaef9eb28b9947a195452c4a4231ffd9b3cd068f2bceea7b5c8b9d4f92d9cc2a74eb77b2df3d010a73325002e8725b936de302d56862b6a9329#npm:1.1.15"],\
           ["@radix-ui/react-label", "virtual:67ccad33dc334aaef9eb28b9947a195452c4a4231ffd9b3cd068f2bceea7b5c8b9d4f92d9cc2a74eb77b2df3d010a73325002e8725b936de302d56862b6a9329#npm:2.1.8"],\
@@ -69,6 +70,100 @@ const RAW_RUNTIME_STATE =
           ["vite", "virtual:67ccad33dc334aaef9eb28b9947a195452c4a4231ffd9b3cd068f2bceea7b5c8b9d4f92d9cc2a74eb77b2df3d010a73325002e8725b936de302d56862b6a9329#npm:7.3.1"]\
         ],\
         "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@amplitude/analytics-browser", [\
+      ["npm:2.35.4", {\
+        "packageLocation": "../../.yarn/berry/cache/@amplitude-analytics-browser-npm-2.35.4-9f2e1b441b-10c0.zip/node_modules/@amplitude/analytics-browser/",\
+        "packageDependencies": [\
+          ["@amplitude/analytics-browser", "npm:2.35.4"],\
+          ["@amplitude/analytics-core", "npm:2.40.2"],\
+          ["@amplitude/plugin-autocapture-browser", "npm:1.22.3"],\
+          ["@amplitude/plugin-network-capture-browser", "npm:1.8.3"],\
+          ["@amplitude/plugin-page-url-enrichment-browser", "npm:0.6.3"],\
+          ["@amplitude/plugin-page-view-tracking-browser", "npm:2.7.3"],\
+          ["@amplitude/plugin-web-vitals-browser", "npm:1.1.14"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@amplitude/analytics-connector", [\
+      ["npm:1.6.4", {\
+        "packageLocation": "../../.yarn/berry/cache/@amplitude-analytics-connector-npm-1.6.4-3b225f4264-10c0.zip/node_modules/@amplitude/analytics-connector/",\
+        "packageDependencies": [\
+          ["@amplitude/analytics-connector", "npm:1.6.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@amplitude/analytics-core", [\
+      ["npm:2.40.2", {\
+        "packageLocation": "../../.yarn/berry/cache/@amplitude-analytics-core-npm-2.40.2-8c94d05c56-10c0.zip/node_modules/@amplitude/analytics-core/",\
+        "packageDependencies": [\
+          ["@amplitude/analytics-connector", "npm:1.6.4"],\
+          ["@amplitude/analytics-core", "npm:2.40.2"],\
+          ["safe-json-stringify", "npm:1.2.0"],\
+          ["tslib", "npm:2.8.1"],\
+          ["zen-observable-ts", "npm:1.2.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@amplitude/plugin-autocapture-browser", [\
+      ["npm:1.22.3", {\
+        "packageLocation": "../../.yarn/berry/cache/@amplitude-plugin-autocapture-browser-npm-1.22.3-accddd9c2f-10c0.zip/node_modules/@amplitude/plugin-autocapture-browser/",\
+        "packageDependencies": [\
+          ["@amplitude/analytics-core", "npm:2.40.2"],\
+          ["@amplitude/plugin-autocapture-browser", "npm:1.22.3"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@amplitude/plugin-network-capture-browser", [\
+      ["npm:1.8.3", {\
+        "packageLocation": "../../.yarn/berry/cache/@amplitude-plugin-network-capture-browser-npm-1.8.3-d6b12b963b-10c0.zip/node_modules/@amplitude/plugin-network-capture-browser/",\
+        "packageDependencies": [\
+          ["@amplitude/analytics-core", "npm:2.40.2"],\
+          ["@amplitude/plugin-network-capture-browser", "npm:1.8.3"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@amplitude/plugin-page-url-enrichment-browser", [\
+      ["npm:0.6.3", {\
+        "packageLocation": "../../.yarn/berry/cache/@amplitude-plugin-page-url-enrichment-browser-npm-0.6.3-069403b54f-10c0.zip/node_modules/@amplitude/plugin-page-url-enrichment-browser/",\
+        "packageDependencies": [\
+          ["@amplitude/analytics-core", "npm:2.40.2"],\
+          ["@amplitude/plugin-page-url-enrichment-browser", "npm:0.6.3"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@amplitude/plugin-page-view-tracking-browser", [\
+      ["npm:2.7.3", {\
+        "packageLocation": "../../.yarn/berry/cache/@amplitude-plugin-page-view-tracking-browser-npm-2.7.3-9fd34e1b0e-10c0.zip/node_modules/@amplitude/plugin-page-view-tracking-browser/",\
+        "packageDependencies": [\
+          ["@amplitude/analytics-core", "npm:2.40.2"],\
+          ["@amplitude/plugin-page-view-tracking-browser", "npm:2.7.3"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@amplitude/plugin-web-vitals-browser", [\
+      ["npm:1.1.14", {\
+        "packageLocation": "../../.yarn/berry/cache/@amplitude-plugin-web-vitals-browser-npm-1.1.14-2d16cc25af-10c0.zip/node_modules/@amplitude/plugin-web-vitals-browser/",\
+        "packageDependencies": [\
+          ["@amplitude/analytics-core", "npm:2.40.2"],\
+          ["@amplitude/plugin-web-vitals-browser", "npm:1.1.14"],\
+          ["tslib", "npm:2.8.1"],\
+          ["web-vitals", "npm:5.1.0"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@babel/code-frame", [\
@@ -4152,6 +4247,7 @@ const RAW_RUNTIME_STATE =
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@amplitude/analytics-browser", "npm:2.35.4"],\
           ["@eslint/js", "npm:9.39.2"],\
           ["@radix-ui/react-dialog", "virtual:67ccad33dc334aaef9eb28b9947a195452c4a4231ffd9b3cd068f2bceea7b5c8b9d4f92d9cc2a74eb77b2df3d010a73325002e8725b936de302d56862b6a9329#npm:1.1.15"],\
           ["@radix-ui/react-label", "virtual:67ccad33dc334aaef9eb28b9947a195452c4a4231ffd9b3cd068f2bceea7b5c8b9d4f92d9cc2a74eb77b2df3d010a73325002e8725b936de302d56862b6a9329#npm:2.1.8"],\
@@ -5679,6 +5775,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["safe-json-stringify", [\
+      ["npm:1.2.0", {\
+        "packageLocation": "../../.yarn/berry/cache/safe-json-stringify-npm-1.2.0-77cfd16d74-10c0.zip/node_modules/safe-json-stringify/",\
+        "packageDependencies": [\
+          ["safe-json-stringify", "npm:1.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["safer-buffer", [\
       ["npm:2.1.2", {\
         "packageLocation": "../../.yarn/berry/cache/safer-buffer-npm-2.1.2-8d5c0b705e-10c0.zip/node_modules/safer-buffer/",\
@@ -6412,6 +6517,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["web-vitals", [\
+      ["npm:5.1.0", {\
+        "packageLocation": "../../.yarn/berry/cache/web-vitals-npm-5.1.0-8b1652e588-10c0.zip/node_modules/web-vitals/",\
+        "packageDependencies": [\
+          ["web-vitals", "npm:5.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["which", [\
       ["npm:2.0.2", {\
         "packageLocation": "../../.yarn/berry/cache/which-npm-2.0.2-320ddf72f7-10c0.zip/node_modules/which/",\
@@ -6522,6 +6636,25 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/yocto-queue-npm-0.1.0-c6c9a7db29-10c0.zip/node_modules/yocto-queue/",\
         "packageDependencies": [\
           ["yocto-queue", "npm:0.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["zen-observable", [\
+      ["npm:0.8.15", {\
+        "packageLocation": "../../.yarn/berry/cache/zen-observable-npm-0.8.15-3bec99c19c-10c0.zip/node_modules/zen-observable/",\
+        "packageDependencies": [\
+          ["zen-observable", "npm:0.8.15"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["zen-observable-ts", [\
+      ["npm:1.2.5", {\
+        "packageLocation": "../../.yarn/berry/cache/zen-observable-ts-npm-1.2.5-4ddaa0e233-10c0.zip/node_modules/zen-observable-ts/",\
+        "packageDependencies": [\
+          ["zen-observable", "npm:0.8.15"],\
+          ["zen-observable-ts", "npm:1.2.5"]\
         ],\
         "linkType": "HARD"\
       }]\
