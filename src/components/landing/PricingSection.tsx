@@ -1,4 +1,4 @@
-import { Check } from 'lucide-react'
+import { Check, Instagram } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 import type { TranslationKey } from '@/i18n/translations/ru'
 
@@ -11,6 +11,7 @@ const plans = [
       'pricing.basic.f2' as TranslationKey,
       'pricing.basic.f3' as TranslationKey,
       'pricing.basic.f4' as TranslationKey,
+      'pricing.basic.f5' as TranslationKey,
     ],
   },
   {
@@ -24,7 +25,6 @@ const plans = [
       'pricing.pro.f4' as TranslationKey,
       'pricing.pro.f5' as TranslationKey,
       'pricing.pro.f6' as TranslationKey,
-      'pricing.pro.f7' as TranslationKey,
     ],
   },
 ]
@@ -48,9 +48,6 @@ export function PricingSection() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-3">
             {t('pricing.title')}
           </h2>
-          <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
-            {t('pricing.trial')}
-          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
@@ -81,6 +78,31 @@ export function PricingSection() {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* Instagram Discount */}
+        <div className="mb-6 rounded-2xl border border-pink-200 bg-gradient-to-br from-pink-50 to-rose-50 p-6 sm:p-8">
+          <div className="flex items-start gap-4">
+            <div className="shrink-0 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 p-3">
+              <Instagram className="h-5 w-5 text-white" />
+            </div>
+            <div className="flex-1">
+              <div className="mb-1 inline-flex items-center rounded-full bg-pink-100 px-3 py-0.5 text-xs font-semibold text-pink-600">
+                {t('pricing.discount.badge')}
+              </div>
+              <p className="mt-1.5 text-base font-semibold text-gray-900">
+                {t('pricing.discount.title')}
+              </p>
+              <ul className="mt-4 space-y-2.5">
+                {(['pricing.discount.c1', 'pricing.discount.c2', 'pricing.discount.c3'] as const).map((key) => (
+                  <li key={key} className="flex items-start gap-2.5 text-sm text-gray-600">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-pink-500" />
+                    {t(key)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* Terms */}
