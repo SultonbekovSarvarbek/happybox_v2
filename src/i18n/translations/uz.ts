@@ -107,7 +107,7 @@ export const uz: Record<TranslationKey, string> = {
   'pricing.discount.c3': 'HappyBox tilga olingan 1 ta story joylashtiring',
 
   'pricing.terms': 'Shartlar',
-  'pricing.term1': 'Sotuvdan komissiya 5%',
+  'pricing.term1': 'Sotuvdan komissiya 8%',
   'pricing.term2': 'Joylashtirishni istalgan paytda to\'xtatish mumkin',
   'pricing.term3': 'Obuna bir oyga platformaga kirish uchun to\'lanadi',
   'pricing.ready': 'Ulanishga tayyormisiz?',

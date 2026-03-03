@@ -105,7 +105,7 @@ export const ru = {
   'pricing.discount.c3': 'Разместите 1 story с упоминанием HappyBox',
 
   'pricing.terms': 'Условия',
-  'pricing.term1': 'Комиссия с продаж 5%',
+  'pricing.term1': 'Комиссия с продаж 8%',
   'pricing.term2': 'Можно приостановить размещение в любой момент',
   'pricing.term3': 'Подписка оплачивается за доступ к платформе на месяц',
   'pricing.ready': 'Готовы подключиться?',
