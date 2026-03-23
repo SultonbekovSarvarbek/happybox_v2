@@ -104,6 +104,119 @@ app.post('/api/contact', async (req, res) => {
   }
 })
 
+const APP_STORE_URL = 'https://apps.apple.com/app/id6758584836'
+
+app.get('/go/:handle', (req: express.Request, res: express.Response) => {
+  const handle = req.params.handle.replace(/[^a-zA-Z0-9_.\-]/g, '')
+  const deepLink = `happybox://cards/${handle}`
+
+  res.setHeader('Content-Type', 'text/html; charset=utf-8')
+  res.send(`<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HappyBox — Открываем карточку...</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+      background: #F2F2F7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 32px;
+      text-align: center;
+      max-width: 360px;
+      width: 100%;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    .logo { font-size: 48px; margin-bottom: 20px; }
+    h1 { font-size: 22px; font-weight: 700; color: #1C1C1E; margin-bottom: 8px; }
+    p { font-size: 15px; color: #8E8E93; line-height: 1.5; margin-bottom: 28px; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 12px;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary { background: #0A84FF; color: white; }
+    .btn-secondary { background: #F2F2F7; color: #0A84FF; }
+    .spinner {
+      width: 32px; height: 32px;
+      border: 3px solid #E5E5EA;
+      border-top-color: #0A84FF;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">🎁</div>
+
+    <div id="loading">
+      <div class="spinner"></div>
+      <h1>Открываем HappyBox...</h1>
+      <p>Подождите секунду</p>
+    </div>
+
+    <div id="fallback" class="hidden">
+      <h1>Скачайте HappyBox</h1>
+      <p>Установите приложение, чтобы увидеть карточку @${handle}</p>
+      <a class="btn btn-primary" href="${APP_STORE_URL}">Скачать в App Store</a>
+      <a class="btn btn-secondary" href="${deepLink}">Уже есть приложение</a>
+    </div>
+  </div>
+
+  <script>
+    var deepLink = '${deepLink}';
+    var appStoreUrl = '${APP_STORE_URL}';
+    var didOpen = false;
+
+    // Try to open the app
+    window.location.href = deepLink;
+
+    // Listen for when user comes back (app not installed)
+    var timer = setTimeout(function() {
+      if (!didOpen) {
+        document.getElementById('loading').classList.add('hidden');
+        document.getElementById('fallback').classList.remove('hidden');
+      }
+    }, 1800);
+
+    // If page becomes hidden, app opened successfully
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        didOpen = true;
+        clearTimeout(timer);
+      }
+    });
+
+    window.addEventListener('blur', function() {
+      didOpen = true;
+      clearTimeout(timer);
+    });
+  </script>
+</body>
+</html>`)
+})
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
 })
