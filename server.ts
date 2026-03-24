@@ -137,7 +137,6 @@ app.get('/go/:handle', (req: express.Request, res: express.Response) => {
       width: 100%;
       box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     }
-    .logo { font-size: 48px; margin-bottom: 20px; }
     h1 { font-size: 22px; font-weight: 700; color: #1C1C1E; margin-bottom: 8px; }
     p { font-size: 15px; color: #8E8E93; line-height: 1.5; margin-bottom: 28px; }
     .btn {
@@ -168,8 +167,6 @@ app.get('/go/:handle', (req: express.Request, res: express.Response) => {
 </head>
 <body>
   <div class="card">
-    <div class="logo">🎁</div>
-
     <div id="loading">
       <div class="spinner"></div>
       <h1>Открываем HappyBox...</h1>
@@ -180,7 +177,12 @@ app.get('/go/:handle', (req: express.Request, res: express.Response) => {
       <h1>Скачайте HappyBox</h1>
       <p>Установите приложение, чтобы увидеть карточку @${handle}</p>
       <a class="btn btn-primary" href="${APP_STORE_URL}">Скачать в App Store</a>
-      <a class="btn btn-secondary" href="${deepLink}">Уже есть приложение</a>
+      <p style="margin-top: 20px; margin-bottom: 4px; font-size: 14px; color: #8E8E93;">
+        <a href="tel:+998940444581" style="color: #0A84FF; text-decoration: none;">+998 94 044 45 81</a>
+      </p>
+      <p style="font-size: 14px; color: #8E8E93; margin-bottom: 0;">
+        <a href="mailto:info@happybox.uz" style="color: #0A84FF; text-decoration: none;">info@happybox.uz</a>
+      </p>
     </div>
   </div>
 
