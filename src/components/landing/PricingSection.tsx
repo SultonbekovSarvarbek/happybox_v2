@@ -3,115 +3,52 @@ import { useLanguage } from '@/i18n/LanguageContext'
 import type { TranslationKey } from '@/i18n/translations/ru'
 import { track } from '@/lib/amplitude'
 
-const plans = [
-  {
-    name: 'Basic',
-    price: '300 000',
-    featureKeys: [
-      'pricing.basic.f1' as TranslationKey,
-      'pricing.basic.f2' as TranslationKey,
-      'pricing.basic.f3' as TranslationKey,
-      'pricing.basic.f4' as TranslationKey,
-      'pricing.basic.f5' as TranslationKey,
-    ],
-  },
-  {
-    name: 'Pro',
-    price: '600 000',
-    highlighted: true,
-    featureKeys: [
-      'pricing.pro.f1' as TranslationKey,
-      'pricing.pro.f2' as TranslationKey,
-      'pricing.pro.f3' as TranslationKey,
-      'pricing.pro.f4' as TranslationKey,
-      'pricing.pro.f5' as TranslationKey,
-      'pricing.pro.f6' as TranslationKey,
-    ],
-  },
-]
-
-const termKeys = [
-  'pricing.term1' as TranslationKey,
-  'pricing.term2' as TranslationKey,
-  'pricing.term3' as TranslationKey,
-]
-
 export function PricingSection() {
   const { t } = useLanguage()
 
   return (
     <section className="py-20 sm:py-28 px-4 sm:px-6 bg-white">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-12">
           <p className="text-[#0A84FF] font-semibold text-sm uppercase tracking-widest mb-3">
             {t('pricing.label')}
           </p>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-3">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900">
             {t('pricing.title')}
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`rounded-2xl p-7 border ${
-                plan.highlighted
-                  ? 'border-[#0A84FF] shadow-lg shadow-blue-500/10'
-                  : 'border-gray-100'
-              }`}
-            >
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">{plan.name}</h3>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-3xl font-bold text-gray-900">{plan.price}</span>
-                  <span className="text-sm text-gray-400">{t('pricing.currency')}</span>
-                </div>
-              </div>
+        {/* Commission tiers */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          {/* Standard */}
+          <div className="bg-gray-50 rounded-2xl p-8 text-center">
+            <p className="text-5xl sm:text-6xl font-bold text-gray-900 mb-3">
+              {t('pricing.commission.standard' as TranslationKey)}
+            </p>
+            <p className="text-gray-500 text-sm">
+              {t('pricing.commission.standard.label' as TranslationKey)}
+            </p>
+          </div>
 
-              <ul className="space-y-3">
-                {plan.featureKeys.map((key) => (
-                  <li key={key} className="flex items-start gap-2.5 text-sm text-gray-600">
-                    <Check className="h-4 w-4 text-[#0A84FF] mt-0.5 shrink-0" />
-                    {t(key)}
-                  </li>
-                ))}
-              </ul>
+          {/* Instagram discount */}
+          <div className="rounded-2xl border-2 border-[#0A84FF] bg-blue-50/40 p-8 text-center relative overflow-hidden">
+            <div className="absolute top-3 right-3 bg-[#0A84FF] rounded-full p-1.5">
+              <Instagram className="h-3.5 w-3.5 text-white" />
             </div>
-          ))}
-        </div>
-
-        {/* Instagram Discount */}
-        <div className="mb-6 rounded-2xl border border-pink-200 bg-gradient-to-br from-pink-50 to-rose-50 p-6 sm:p-8">
-          <div className="flex items-start gap-4">
-            <div className="shrink-0 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 p-3">
-              <Instagram className="h-5 w-5 text-white" />
-            </div>
-            <div className="flex-1">
-              <div className="mb-1 inline-flex items-center rounded-full bg-pink-100 px-3 py-0.5 text-xs font-semibold text-pink-600">
-                {t('pricing.discount.badge')}
-              </div>
-              <p className="mt-1.5 text-base font-semibold text-gray-900">
-                {t('pricing.discount.title')}
-              </p>
-              <ul className="mt-4 space-y-2.5">
-                {(['pricing.discount.c1', 'pricing.discount.c2', 'pricing.discount.c3'] as const).map((key) => (
-                  <li key={key} className="flex items-start gap-2.5 text-sm text-gray-600">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-pink-500" />
-                    {t(key)}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <p className="text-5xl sm:text-6xl font-bold text-[#0A84FF] mb-3">
+              {t('pricing.commission.discount' as TranslationKey)}
+            </p>
+            <p className="text-gray-500 text-sm">
+              {t('pricing.commission.discount.label' as TranslationKey)}
+            </p>
           </div>
         </div>
 
         {/* Terms */}
-        <div className="bg-gray-50 rounded-2xl p-6 sm:p-8">
-          <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-widest mb-4">{t('pricing.terms')}</h4>
-          <ul className="space-y-2">
-            {termKeys.map((key) => (
-              <li key={key} className="flex items-start gap-2.5 text-sm text-gray-500">
+        <div className="rounded-2xl border border-gray-100 p-6 sm:p-8 mb-12">
+          <ul className="space-y-3">
+            {(['pricing.term1', 'pricing.term2'] as TranslationKey[]).map((key) => (
+              <li key={key} className="flex items-start gap-2.5 text-sm text-gray-600">
                 <Check className="h-4 w-4 text-green-500 mt-0.5 shrink-0" />
                 {t(key)}
               </li>
@@ -120,7 +57,7 @@ export function PricingSection() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-14">
+        <div className="text-center">
           <p className="text-gray-400 text-sm mb-5">{t('pricing.ready')}</p>
           <a
             href="https://t.me/happybox_manager"

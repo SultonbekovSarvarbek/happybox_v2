@@ -104,8 +104,12 @@ export const ru = {
   'pricing.discount.c2': 'Разместите 1 пост о HappyBox',
   'pricing.discount.c3': 'Разместите 1 story с упоминанием HappyBox',
 
+  'pricing.commission.standard': '12%',
+  'pricing.commission.standard.label': 'Комиссия с продаж',
+  'pricing.commission.discount': '8%',
+  'pricing.commission.discount.label': 'если добавите ссылку на ваши сертификаты в шапке Instagram',
   'pricing.terms': 'Условия',
-  'pricing.term1': 'Комиссия с продаж 8%',
+  'pricing.term1': 'Комиссия с продаж 12%',
   'pricing.term2': 'Можно приостановить размещение в любой момент',
   'pricing.term3': 'Подписка оплачивается за доступ к платформе на месяц',
   'pricing.ready': 'Готовы подключиться?',

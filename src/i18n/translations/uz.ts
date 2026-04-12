@@ -106,8 +106,12 @@ export const uz: Record<TranslationKey, string> = {
   'pricing.discount.c2': 'HappyBox haqida 1 ta post joylashtiring',
   'pricing.discount.c3': 'HappyBox tilga olingan 1 ta story joylashtiring',
 
+  'pricing.commission.standard': '12%',
+  'pricing.commission.standard.label': 'Sotuvdan komissiya',
+  'pricing.commission.discount': '8%',
+  'pricing.commission.discount.label': 'Instagram profilingiz bio\'siga sertifikat havolasini qo\'shsangiz',
   'pricing.terms': 'Shartlar',
-  'pricing.term1': 'Sotuvdan komissiya 8%',
+  'pricing.term1': 'Sotuvdan komissiya 12%',
   'pricing.term2': 'Joylashtirishni istalgan paytda to\'xtatish mumkin',
   'pricing.term3': 'Obuna bir oyga platformaga kirish uchun to\'lanadi',
   'pricing.ready': 'Ulanishga tayyormisiz?',
