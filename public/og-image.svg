@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Manrope, Inter, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#EFF6FF"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.85" cy="0.15" r="0.5">
+      <stop offset="0%" stop-color="#0A84FF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0A84FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.1" cy="0.9" r="0.4">
+      <stop offset="0%" stop-color="#0A84FF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0A84FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="iconBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A94FF"/>
+      <stop offset="100%" stop-color="#0070E0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Logo + brand -->
+  <g transform="translate(80 80)">
+    <rect width="56" height="56" rx="14" fill="url(#iconBg)"/>
+    <g transform="translate(14 14)" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M23 11v15H5V11"/>
+      <rect x="3" y="7" width="22" height="4" rx="0.5"/>
+      <path d="M14 26V7"/>
+      <path d="M14 7H9.5a2.5 2.5 0 0 1 0-5C13 2 14 7 14 7z" fill="#ffffff" fill-opacity="0.2"/>
+      <path d="M14 7h4.5a2.5 2.5 0 0 0 0-5C15 2 14 7 14 7z" fill="#ffffff" fill-opacity="0.2"/>
+    </g>
+    <text x="74" y="38" font-size="26" font-weight="700" fill="#1C1C1E" letter-spacing="-0.5">HappyBox</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="80" y="280" font-size="72" font-weight="800" fill="#0F172A" letter-spacing="-2">Продавайте подарочные</text>
+  <text x="80" y="360" font-size="72" font-weight="800" fill="#0F172A" letter-spacing="-2">сертификаты <tspan fill="#0A84FF">онлайн</tspan></text>
+
+  <!-- Subtitle -->
+  <text x="80" y="435" font-size="26" font-weight="500" fill="#475569" letter-spacing="-0.3">Подключите свой салон к HappyBox - получайте новых клиентов</text>
+  <text x="80" y="471" font-size="26" font-weight="500" fill="#475569" letter-spacing="-0.3">и оплату за сертификаты сразу, без расходов на рекламу.</text>
+
+  <!-- CTA pill -->
+  <g transform="translate(80 545)">
+    <rect width="220" height="50" rx="12" fill="#0A84FF"/>
+    <text x="110" y="32" font-size="17" font-weight="600" fill="#ffffff" text-anchor="middle" letter-spacing="-0.2">Оставить заявку →</text>
+  </g>
+
+  <!-- Domain -->
+  <text x="1120" y="585" font-size="16" font-weight="600" fill="#94A3B8" text-anchor="end" letter-spacing="0.5">happybox.uz</text>
+</svg>

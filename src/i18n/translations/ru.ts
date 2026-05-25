@@ -1,35 +1,103 @@
 export const ru = {
-  // Hero
-  'hero.title1': 'Подарочные сертификаты',
-  'hero.title2': 'легко и быстро',
-  'hero.subtitle': 'Выберите подарок и отправьте близким за пару минут',
-  'hero.cta': 'Смотреть сертификаты',
-  'hero.business': 'Для бизнеса',
+  // Hero (B2B)
+  'hero.badge': 'Для салонов красоты, барбершопов и SPA',
+  'hero.title1': 'Продавайте подарочные сертификаты',
+  'hero.title2': 'онлайн',
+  'hero.subtitle': 'Подключите свой салон к HappyBox - получайте новых клиентов и оплату за сертификаты сразу, без расходов на рекламу.',
+  'hero.cta': 'Оставить заявку',
+  'hero.business': 'Как это работает',
+  'hero.appBadge': 'Я клиент - скачать приложение',
 
-  // How it works
-  'howItWorks.label': 'Просто и удобно',
-  'howItWorks.title': 'Как это работает',
-  'howItWorks.step1.title': 'Выберите сертификат',
-  'howItWorks.step1.description': 'Найдите идеальный подарок из каталога партнёров.',
-  'howItWorks.step2.title': 'Оплатите',
-  'howItWorks.step2.description': 'Быстрая и безопасная оплата любым удобным способом.',
-  'howItWorks.step3.title': 'Получите код сертификата',
-  'howItWorks.step3.description': 'Уникальный код придёт вам через приложение.',
-  'howItWorks.examples': 'Примеры сертификатов',
-  'howItWorks.cert1.name': 'The Rumi Restaurant',
-  'howItWorks.cert1.desc': 'Ужин на двоих',
-  'howItWorks.cert1.price': '500 000 сум',
-  'howItWorks.cert2.name': 'Spa Oasis',
-  'howItWorks.cert2.desc': 'Релакс-программа 90 мин',
-  'howItWorks.cert2.price': '350 000 сум',
-  'howItWorks.cert3.name': 'Beauty Room',
-  'howItWorks.cert3.desc': 'Уход за лицом + укладка',
-  'howItWorks.cert3.price': '280 000 сум',
-  'howItWorks.cert4.name': 'FitLife Gym',
-  'howItWorks.cert4.desc': 'Абонемент на 1 месяц',
-  'howItWorks.cert4.price': '450 000 сум',
+  // Social proof
+  'proof.salons': 'салонов уже подключены',
+  'proof.cities': 'городов Узбекистана',
+  'proof.certificates': 'сертификатов продано',
 
-  // Categories
+  // How it works (для салона - переоборудовано)
+  'howItWorks.label': 'Для салона',
+  'howItWorks.title': 'Как HappyBox работает для вашего салона',
+  'howItWorks.step1.title': '1. Оставляете заявку',
+  'howItWorks.step1.description': 'Заполняете короткую форму - менеджер связывается в течение дня.',
+  'howItWorks.step2.title': '2. Настраиваем витрину',
+  'howItWorks.step2.description': 'Подключаем ваш салон в приложение, добавляем услуги и фото - бесплатно.',
+  'howItWorks.step3.title': '3. Клиент покупает сертификат',
+  'howItWorks.step3.description': 'Покупатель оплачивает в приложении, деньги поступают вам.',
+  'howItWorks.step4.title': '4. Клиент приходит в салон',
+  'howItWorks.step4.description': 'Гость показывает QR-код - вы оказываете услугу. Всё прозрачно.',
+
+  // For Business (value props)
+  'business.label': 'Что получает салон',
+  'business.title1': 'Новые клиенты и рост',
+  'business.title2': 'среднего чека',
+  'business.subtitle': 'HappyBox - это канал продаж и привлечения, который работает без вашего участия.',
+  'business.clients.title': 'Новые клиенты без затрат на рекламу',
+  'business.clients.description': 'Тысячи пользователей в приложении ищут подарки - и приходят к вам.',
+  'business.catalog.title': 'Деньги за сертификат - сразу',
+  'business.catalog.description': 'Получаете оплату в момент продажи, а не после визита клиента.',
+  'business.cabinet.title': 'Рост среднего чека',
+  'business.cabinet.description': 'Гости часто доплачивают за дополнительные услуги сверх номинала сертификата.',
+  'business.analytics.title': 'Аналитика и кабинет партнёра',
+  'business.analytics.description': 'Видите продажи, посещения и статистику - принимайте решения по данным.',
+
+  // Business Steps (теперь не нужен отдельно, оставляем под FAQ/доп. шаги)
+  'businessSteps.label': 'Подключение',
+  'businessSteps.title': 'Подключение за 1 день',
+  'businessSteps.step1.title': 'Оставляете заявку',
+  'businessSteps.step1.description': 'Заполните короткую форму - менеджер свяжется в течение дня.',
+  'businessSteps.step2.title': 'Подписываем договор',
+  'businessSteps.step2.description': 'Стандартный договор, без скрытых платежей и абонплаты.',
+  'businessSteps.step3.title': 'Настраиваем витрину',
+  'businessSteps.step3.description': 'Добавляем ваш салон и услуги в приложение бесплатно.',
+  'businessSteps.step4.title': 'Начинаете продавать',
+  'businessSteps.step4.description': 'Сертификаты доступны клиентам - деньги поступают на ваш счёт.',
+
+  // Pricing
+  'pricing.label': 'Условия сотрудничества',
+  'pricing.title': 'Платите только за результат',
+  'pricing.commission.standard': '12%',
+  'pricing.commission.standard.label': 'Комиссия с продажи сертификата',
+  'pricing.commission.discount': '8%',
+  'pricing.commission.discount.label': 'Сниженная комиссия - если разместите ссылку на HappyBox в Instagram',
+  'pricing.term1': 'Без абонентской платы - платите процент только когда продаёте',
+  'pricing.term2': 'Можно приостановить размещение в любой момент',
+  'pricing.ready': 'Готовы подключить салон?',
+  'pricing.cta': 'Оставить заявку',
+
+  // Lead form
+  'lead.label': 'Заявка на подключение',
+  'lead.title': 'Подключим ваш салон за 1 день',
+  'lead.subtitle': 'Оставьте контакты - менеджер свяжется и расскажет всё подробно.',
+  'lead.name': 'Ваше имя',
+  'lead.namePlaceholder': 'Имя',
+  'lead.salon': 'Название салона',
+  'lead.salonPlaceholder': 'Например, Beauty Room',
+  'lead.phone': 'Телефон',
+  'lead.phonePlaceholder': '+998 __ ___ __ __',
+  'lead.city': 'Город',
+  'lead.cityPlaceholder': 'Ташкент',
+  'lead.submit': 'Отправить заявку',
+  'lead.submitting': 'Отправляем…',
+  'lead.success': 'Спасибо! Менеджер свяжется с вами в течение дня.',
+  'lead.error': 'Не получилось отправить. Попробуйте ещё раз или напишите в Telegram.',
+  'lead.privacy': 'Нажимая «Отправить», вы соглашаетесь с политикой конфиденциальности.',
+  'lead.alt': 'Или напишите нам прямо сейчас:',
+
+  // For customers (компактно)
+  'customers.label': 'Покупателям',
+  'customers.title': 'Хотите подарить сертификат близкому?',
+  'customers.subtitle': 'Скачайте приложение HappyBox - выбирайте сертификаты в любимых салонах и отправляйте за пару минут.',
+  'customers.cta': 'Скачать в App Store',
+
+  // Footer
+  'footer.description': 'HappyBox - платформа подарочных сертификатов для салонов красоты, барбершопов и SPA.',
+  'footer.info': 'Информация',
+  'footer.privacy': 'Политика конфиденциальности',
+  'footer.business': 'Подключить салон',
+  'footer.contacts': 'Контакты',
+  'footer.app': 'Приложение для клиентов',
+  'footer.downloadApp': 'Скачать для iOS',
+
+  // Categories (используются в B2C-странице если будет)
   'categories.label': 'Каталог',
   'categories.title': 'Категории сертификатов',
   'categories.care': 'Уход и внешность',
@@ -44,7 +112,7 @@ export const ru = {
   'categories.kids': 'Для детей',
   'categories.home': 'Дом и сервис',
 
-  // Why HappyBox
+  // Why (legacy - можно убрать позже)
   'why.label': 'Преимущества',
   'why.title': 'Почему выбирают HappyBox',
   'why.fast.title': 'Быстрое оформление подарка',
@@ -56,78 +124,7 @@ export const ru = {
   'why.variety.title': 'Большой выбор сертификатов',
   'why.variety.description': 'Рестораны, SPA, красота, спорт и многое другое.',
 
-  // For Business
-  'business.label': 'Для бизнеса',
-  'business.title1': 'Размещайте сертификаты и',
-  'business.title2': 'получайте клиентов',
-  'business.subtitle': 'HappyBox - витрина ваших сертификатов. Подключитесь и начните продавать.',
-  'business.clients.title': 'Новые клиенты',
-  'business.clients.description': 'Пользователи платформы покупают ваши сертификаты и приходят к вам.',
-  'business.catalog.title': 'Размещение в каталоге',
-  'business.catalog.description': 'Ваш бизнес на витрине HappyBox - видим тысячам пользователей.',
-  'business.cabinet.title': 'Кабинет партнёра',
-  'business.cabinet.description': 'Управление сертификатами, ценами и описаниями в одном месте.',
-  'business.analytics.title': 'Аналитика продаж',
-  'business.analytics.description': 'Статистика покупок и данные для принятия решений.',
-
-  // Business Steps
-  'businessSteps.label': 'Подключение',
-  'businessSteps.title': 'Как это работает',
-  'businessSteps.step1.title': 'Оставляете заявку',
-  'businessSteps.step1.description': 'Заполните короткую форму на сайте.',
-  'businessSteps.step2.title': 'Подключаем ваш бизнес',
-  'businessSteps.step2.description': 'Мы настраиваем ваш кабинет партнёра.',
-  'businessSteps.step3.title': 'Вы создаёте сертификаты',
-  'businessSteps.step3.description': 'Добавляете предложения, цены и описания.',
-  'businessSteps.step4.title': 'Пользователи покупают',
-  'businessSteps.step4.description': 'Сертификаты появляются в каталоге HappyBox.',
-
-  // Pricing
-  'pricing.label': 'Тарифы',
-  'pricing.title': 'Простое ценообразование',
-  'pricing.trial': '14 дней бесплатного тестового периода',
-  'pricing.currency': 'сум / мес',
-  'pricing.basic.f1': 'До 5 активных сертификатов одновременно',
-  'pricing.basic.f2': 'Неограниченные продажи сертификатов',
-  'pricing.basic.f3': 'Кабинет партнёра',
-  'pricing.basic.f4': 'Аналитика',
-  'pricing.basic.f5': 'Тех. поддержка',
-  'pricing.pro.f1': 'Без ограничений сертификатов',
-  'pricing.pro.f2': 'Неограниченные продажи сертификатов',
-  'pricing.pro.f3': 'Приоритетное размещение',
-  'pricing.pro.f4': 'Расширенная аналитика',
-  'pricing.pro.f5': 'Рекомендации',
-  'pricing.pro.f6': 'Тех. поддержка',
-  'pricing.discount.badge': 'Скидка 20%',
-  'pricing.discount.title': 'Получите скидку 20% на любой тариф',
-  'pricing.discount.c1': 'Добавьте ссылку на приложение HappyBox в bio вашего Instagram',
-  'pricing.discount.c2': 'Разместите 1 пост о HappyBox',
-  'pricing.discount.c3': 'Разместите 1 story с упоминанием HappyBox',
-
-  'pricing.commission.standard': '12%',
-  'pricing.commission.standard.label': 'Комиссия с продаж',
-  'pricing.commission.discount': '8%',
-  'pricing.commission.discount.label': 'если добавите ссылку на ваши сертификаты в шапке Instagram',
-  'pricing.terms': 'Условия',
-  'pricing.term1': 'Комиссия с продаж 12%',
-  'pricing.term2': 'Можно приостановить размещение в любой момент',
-  'pricing.term3': 'Подписка оплачивается за доступ к платформе на месяц',
-  'pricing.ready': 'Готовы подключиться?',
-  'pricing.cta': 'Оставить заявку',
-
-  // Footer
-  'footer.description': 'Платформа подарочных сертификатов от лучших партнёров.',
-  'footer.info': 'Информация',
-  'footer.privacy': 'Политика конфиденциальности',
-  'footer.business': 'Для бизнеса',
-  'footer.contacts': 'Контакты',
-  'footer.app': 'Приложение',
-  'footer.downloadApp': 'Скачать для iOS',
-
-  // Hero
-  'hero.appBadge': 'Скачать приложение',
-
-  // Landing Screen
+  // Landing Screen (legacy)
   'landing.subtitle': 'Соберите подарочную коробку за 2 минуты',
   'landing.cta': 'Создать коробку',
   'landing.birthday': 'День рождения',
@@ -135,16 +132,29 @@ export const ru = {
   'landing.justBecause': 'Просто так',
   'landing.holidays': 'Праздники',
 
-  // Product Selection
+  // Product Selection (legacy)
   'products.title': 'Выбор товаров',
   'products.currency': 'сум',
   'products.items': 'товар',
   'products.viewBox': 'Просмотр коробки',
-
-  // Product Detail
   'product.description': 'Описание',
   'product.inCart': 'В корзине',
   'product.add': 'Добавить',
+
+  // How it works examples (legacy - могут пригодиться)
+  'howItWorks.examples': 'Примеры сертификатов',
+  'howItWorks.cert1.name': 'The Rumi Restaurant',
+  'howItWorks.cert1.desc': 'Ужин на двоих',
+  'howItWorks.cert1.price': '500 000 сум',
+  'howItWorks.cert2.name': 'Spa Oasis',
+  'howItWorks.cert2.desc': 'Релакс-программа 90 мин',
+  'howItWorks.cert2.price': '350 000 сум',
+  'howItWorks.cert3.name': 'Beauty Room',
+  'howItWorks.cert3.desc': 'Уход за лицом + укладка',
+  'howItWorks.cert3.price': '280 000 сум',
+  'howItWorks.cert4.name': 'FitLife Gym',
+  'howItWorks.cert4.desc': 'Абонемент на 1 месяц',
+  'howItWorks.cert4.price': '450 000 сум',
 
   // Privacy Policy
   'privacy.title': 'Политика конфиденциальности',
@@ -166,7 +176,7 @@ export const ru = {
   'privacy.s3.items': 'обработки заказов|передачи сертификатов|связи с пользователем|поддержки клиентов|улучшения сервиса|предотвращения мошенничества|выполнения требований законодательства',
   'privacy.s4.title': '4. Передача данных третьим лицам',
   'privacy.s4.intro': 'HappyBox может передавать данные третьим лицам только в следующих случаях:',
-  'privacy.s4.items': 'бизнес-партнёрам — для исполнения сертификата|платёжным системам — для обработки оплаты|государственным органам — если это требуется законом',
+  'privacy.s4.items': 'бизнес-партнёрам - для исполнения сертификата|платёжным системам - для обработки оплаты|государственным органам - если это требуется законом',
   'privacy.s4.note': 'Мы не продаём и не передаём персональные данные третьим лицам в маркетинговых целях.',
   'privacy.s5.title': '5. Хранение и защита данных',
   'privacy.s5.intro': 'Мы принимаем разумные технические и организационные меры безопасности для защиты данных от:',

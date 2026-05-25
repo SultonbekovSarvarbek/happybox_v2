@@ -1,35 +1,103 @@
 import type { TranslationKey } from './ru';
 
 export const uz: Record<TranslationKey, string> = {
-  // Hero
-  'hero.title1': 'Sovg\'a sertifikatlari',
-  'hero.title2': 'oson va tez',
-  'hero.subtitle': 'Sovg\'ani tanlang va yaqinlaringizga bir necha daqiqada yuboring',
-  'hero.cta': 'Sertifikatlarni ko\'rish',
-  'hero.business': 'Biznes uchun',
+  // Hero (B2B)
+  'hero.badge': 'Go\'zallik salonlari, barbershoplar va SPA uchun',
+  'hero.title1': 'Sovg\'a sertifikatlarini',
+  'hero.title2': 'onlayn soting',
+  'hero.subtitle': 'Salonni HappyBox\'ga ulang - yangi mijozlar va sertifikat uchun darhol to\'lov oling. Reklama xarajatlarisiz.',
+  'hero.cta': 'Ariza qoldirish',
+  'hero.business': 'Bu qanday ishlaydi',
+  'hero.appBadge': 'Men mijozman - ilovani yuklab olish',
+
+  // Social proof
+  'proof.salons': 'salon allaqachon ulangan',
+  'proof.cities': 'O\'zbekiston shahri',
+  'proof.certificates': 'sertifikat sotilgan',
 
   // How it works
-  'howItWorks.label': 'Oddiy va qulay',
-  'howItWorks.title': 'Bu qanday ishlaydi',
-  'howItWorks.step1.title': 'Sertifikatni tanlang',
-  'howItWorks.step1.description': 'Hamkorlar katalogidan ideal sovg\'ani toping.',
-  'howItWorks.step2.title': 'To\'lov',
-  'howItWorks.step2.description': 'Qulay usulda tez va xavfsiz to\'lov.',
-  'howItWorks.step3.title': 'Sertifikat kodini oling',
-  'howItWorks.step3.description': 'Noyob kod sizga menejer orqali yuboriladi.',
-  'howItWorks.examples': 'Sertifikat namunalari',
-  'howItWorks.cert1.name': 'The Rumi Restaurant',
-  'howItWorks.cert1.desc': 'Ikki kishilik kechki ovqat',
-  'howItWorks.cert1.price': '500 000 so\'m',
-  'howItWorks.cert2.name': 'Spa Oasis',
-  'howItWorks.cert2.desc': 'Relaks dasturi 90 daq',
-  'howItWorks.cert2.price': '350 000 so\'m',
-  'howItWorks.cert3.name': 'Beauty Room',
-  'howItWorks.cert3.desc': 'Yuz parvarishi + turmak',
-  'howItWorks.cert3.price': '280 000 so\'m',
-  'howItWorks.cert4.name': 'FitLife Gym',
-  'howItWorks.cert4.desc': '1 oylik abonement',
-  'howItWorks.cert4.price': '450 000 so\'m',
+  'howItWorks.label': 'Salon uchun',
+  'howItWorks.title': 'HappyBox saloningiz uchun qanday ishlaydi',
+  'howItWorks.step1.title': '1. Ariza qoldirasiz',
+  'howItWorks.step1.description': 'Qisqa shaklni to\'ldirasiz - menejer bir kun ichida bog\'lanadi.',
+  'howItWorks.step2.title': '2. Vitrinani sozlaymiz',
+  'howItWorks.step2.description': 'Salonni ilovaga ulaymiz, xizmatlar va suratlarni qo\'shamiz - bepul.',
+  'howItWorks.step3.title': '3. Mijoz sertifikatni sotib oladi',
+  'howItWorks.step3.description': 'Xaridor ilovada to\'laydi, pul sizga tushadi.',
+  'howItWorks.step4.title': '4. Mijoz salonga keladi',
+  'howItWorks.step4.description': 'Mehmon QR-kodni ko\'rsatadi - siz xizmatni amalga oshirasiz. Hammasi shaffof.',
+
+  // For Business (value props)
+  'business.label': 'Salon nimani oladi',
+  'business.title1': 'Yangi mijozlar va',
+  'business.title2': 'o\'rtacha chekning o\'sishi',
+  'business.subtitle': 'HappyBox - sizning ishtirokingizsiz ishlovchi sotuv va jalb qilish kanali.',
+  'business.clients.title': 'Reklamasiz yangi mijozlar',
+  'business.clients.description': 'Ilovadagi minglab foydalanuvchilar sovg\'a izlamoqda - va sizga kelishadi.',
+  'business.catalog.title': 'Sertifikat uchun to\'lov - darhol',
+  'business.catalog.description': 'Mijoz tashrif buyurganidan keyin emas, balki sotuv vaqtida pul olasiz.',
+  'business.cabinet.title': 'O\'rtacha chekning o\'sishi',
+  'business.cabinet.description': 'Mehmonlar ko\'pincha sertifikat nominalidan tashqari qo\'shimcha xizmatlar uchun to\'laydi.',
+  'business.analytics.title': 'Tahlil va hamkor kabineti',
+  'business.analytics.description': 'Sotuvlar, tashriflar va statistikani ko\'rasiz - ma\'lumotlarga asoslangan qarorlar qabul qiling.',
+
+  // Business Steps
+  'businessSteps.label': 'Ulanish',
+  'businessSteps.title': '1 kunda ulanish',
+  'businessSteps.step1.title': 'Ariza qoldirasiz',
+  'businessSteps.step1.description': 'Qisqa shaklni to\'ldiring - menejer bir kun ichida bog\'lanadi.',
+  'businessSteps.step2.title': 'Shartnoma imzolaymiz',
+  'businessSteps.step2.description': 'Standart shartnoma, yashirin to\'lovlar va abonent to\'lovsiz.',
+  'businessSteps.step3.title': 'Vitrinani sozlaymiz',
+  'businessSteps.step3.description': 'Salonni va xizmatlarni ilovaga bepul qo\'shamiz.',
+  'businessSteps.step4.title': 'Sotishni boshlaysiz',
+  'businessSteps.step4.description': 'Sertifikatlar mijozlarga mavjud - pul hisobingizga tushadi.',
+
+  // Pricing
+  'pricing.label': 'Hamkorlik shartlari',
+  'pricing.title': 'Faqat natija uchun to\'laysiz',
+  'pricing.commission.standard': '12%',
+  'pricing.commission.standard.label': 'Sertifikat sotuvidan komissiya',
+  'pricing.commission.discount': '8%',
+  'pricing.commission.discount.label': 'Pasaytirilgan komissiya - agar Instagram\'da HappyBox havolasini joylashtirsangiz',
+  'pricing.term1': 'Abonent to\'lovsiz - faqat sotuv bo\'lganda foiz to\'laysiz',
+  'pricing.term2': 'Joylashtirishni istalgan paytda to\'xtatish mumkin',
+  'pricing.ready': 'Salonni ulashga tayyormisiz?',
+  'pricing.cta': 'Ariza qoldirish',
+
+  // Lead form
+  'lead.label': 'Ulanish uchun ariza',
+  'lead.title': 'Salonni 1 kunda ulaymiz',
+  'lead.subtitle': 'Kontaktlarni qoldiring - menejer bog\'lanib, hammasini batafsil aytib beradi.',
+  'lead.name': 'Ismingiz',
+  'lead.namePlaceholder': 'Ism',
+  'lead.salon': 'Salon nomi',
+  'lead.salonPlaceholder': 'Masalan, Beauty Room',
+  'lead.phone': 'Telefon',
+  'lead.phonePlaceholder': '+998 __ ___ __ __',
+  'lead.city': 'Shahar',
+  'lead.cityPlaceholder': 'Toshkent',
+  'lead.submit': 'Arizani yuborish',
+  'lead.submitting': 'Yuborilmoqda…',
+  'lead.success': 'Rahmat! Menejer bir kun ichida siz bilan bog\'lanadi.',
+  'lead.error': 'Yuborib bo\'lmadi. Qayta urinib ko\'ring yoki Telegram\'ga yozing.',
+  'lead.privacy': '«Yuborish» ni bosish orqali siz maxfiylik siyosatiga rozilik bildirasiz.',
+  'lead.alt': 'Yoki hozir bizga yozing:',
+
+  // For customers
+  'customers.label': 'Xaridorlarga',
+  'customers.title': 'Yaqiningizga sertifikat sovg\'a qilmoqchimisiz?',
+  'customers.subtitle': 'HappyBox ilovasini yuklab oling - sevimli salonlardagi sertifikatlarni tanlang va bir necha daqiqada yuboring.',
+  'customers.cta': 'App Store\'da yuklab olish',
+
+  // Footer
+  'footer.description': 'HappyBox - go\'zallik salonlari, barbershoplar va SPA uchun sovg\'a sertifikatlari platformasi.',
+  'footer.info': 'Ma\'lumot',
+  'footer.privacy': 'Maxfiylik siyosati',
+  'footer.business': 'Salonni ulash',
+  'footer.contacts': 'Kontaktlar',
+  'footer.app': 'Mijozlar uchun ilova',
+  'footer.downloadApp': 'iOS uchun yuklab olish',
 
   // Categories
   'categories.label': 'Katalog',
@@ -46,7 +114,7 @@ export const uz: Record<TranslationKey, string> = {
   'categories.kids': 'Bolalar uchun',
   'categories.home': 'Uy va servis',
 
-  // Why HappyBox
+  // Why (legacy)
   'why.label': 'Afzalliklar',
   'why.title': 'Nima uchun HappyBox tanlanadi',
   'why.fast.title': 'Sovg\'ani tez rasmiylashtirish',
@@ -54,82 +122,11 @@ export const uz: Record<TranslationKey, string> = {
   'why.occasion.title': 'Har qanday munosabatga mos',
   'why.occasion.description': 'Tug\'ilgan kun, bayram yoki shunchaki yoqimli surpriz.',
   'why.digital.title': 'Qulay raqamli format',
-  'why.digital.description': 'Sertifikat kodini bir zumda oling — qog\'ozsiz va plastiksiz.',
+  'why.digital.description': 'Sertifikat kodini bir zumda oling - qog\'ozsiz va plastiksiz.',
   'why.variety.title': 'Sertifikatlarning katta tanlovi',
   'why.variety.description': 'Restoranlar, SPA, go\'zallik, sport va boshqalar.',
 
-  // For Business
-  'business.label': 'Biznes uchun',
-  'business.title1': 'Sertifikatlarni joylashtiring —',
-  'business.title2': 'mijozlarni qo\'lga kiriting',
-  'business.subtitle': 'HappyBox — sertifikatlaringiz vitrini. Ulanib, sotishni boshlang.',
-  'business.clients.title': 'Yangi mijozlar',
-  'business.clients.description': 'Platforma foydalanuvchilari sertifikatlaringizni sotib olib, sizga kelishadi.',
-  'business.catalog.title': 'Katalogda joylashtirish',
-  'business.catalog.description': 'Biznesingiz HappyBox vitrinida — minglab foydalanuvchilarga ko\'rinadi.',
-  'business.cabinet.title': 'Hamkor kabineti',
-  'business.cabinet.description': 'Sertifikatlar, narxlar va tavsiflarni bir joyda boshqarish.',
-  'business.analytics.title': 'Sotuv tahlili',
-  'business.analytics.description': 'Xaridlar statistikasi va qaror qabul qilish uchun ma\'lumotlar.',
-
-  // Business Steps
-  'businessSteps.label': 'Ulanish',
-  'businessSteps.title': 'Bu qanday ishlaydi',
-  'businessSteps.step1.title': 'Ariza qoldirasiz',
-  'businessSteps.step1.description': 'Saytda qisqa shaklni to\'ldiring.',
-  'businessSteps.step2.title': 'Biznesingizni ulaymiz',
-  'businessSteps.step2.description': 'Biz hamkor kabinetingizni sozlaymiz.',
-  'businessSteps.step3.title': 'Sertifikatlar yaratasiz',
-  'businessSteps.step3.description': 'Takliflar, narxlar va tavsiflarni qo\'shasiz.',
-  'businessSteps.step4.title': 'Foydalanuvchilar sotib oladi',
-  'businessSteps.step4.description': 'Sertifikatlar HappyBox katalogida paydo bo\'ladi.',
-
-  // Pricing
-  'pricing.label': 'Tariflar',
-  'pricing.title': 'Oddiy narxlash',
-  'pricing.trial': '14 kunlik bepul sinov davri',
-  'pricing.currency': 'so\'m / oy',
-  'pricing.basic.f1': 'Bir vaqtda 5 tagacha faol sertifikat',
-  'pricing.basic.f2': 'Cheksiz sertifikat sotuvi',
-  'pricing.basic.f3': 'Hamkor kabineti',
-  'pricing.basic.f4': 'Tahlil',
-  'pricing.basic.f5': 'Texnik qo\'llab-quvvatlash',
-  'pricing.pro.f1': 'Cheksiz sertifikatlar',
-  'pricing.pro.f2': 'Cheksiz sertifikat sotuvi',
-  'pricing.pro.f3': 'Ustunlik bilan joylashtirish',
-  'pricing.pro.f4': 'Kengaytirilgan tahlil',
-  'pricing.pro.f5': 'Tavsiyalar',
-  'pricing.pro.f6': 'Texnik qo\'llab-quvvatlash',
-  'pricing.discount.badge': '20% chegirma',
-  'pricing.discount.title': 'Istalgan tarifga 20% chegirma oling',
-  'pricing.discount.c1': 'Instagram bio\'ingizga HappyBox ilovasi havolasini qo\'shing',
-  'pricing.discount.c2': 'HappyBox haqida 1 ta post joylashtiring',
-  'pricing.discount.c3': 'HappyBox tilga olingan 1 ta story joylashtiring',
-
-  'pricing.commission.standard': '12%',
-  'pricing.commission.standard.label': 'Sotuvdan komissiya',
-  'pricing.commission.discount': '8%',
-  'pricing.commission.discount.label': 'Instagram profilingiz bio\'siga sertifikat havolasini qo\'shsangiz',
-  'pricing.terms': 'Shartlar',
-  'pricing.term1': 'Sotuvdan komissiya 12%',
-  'pricing.term2': 'Joylashtirishni istalgan paytda to\'xtatish mumkin',
-  'pricing.term3': 'Obuna bir oyga platformaga kirish uchun to\'lanadi',
-  'pricing.ready': 'Ulanishga tayyormisiz?',
-  'pricing.cta': 'Ariza qoldirish',
-
-  // Footer
-  'footer.description': 'Eng yaxshi hamkorlardan sovg\'a sertifikatlari platformasi.',
-  'footer.info': 'Ma\'lumot',
-  'footer.privacy': 'Maxfiylik siyosati',
-  'footer.business': 'Biznes uchun',
-  'footer.contacts': 'Kontaktlar',
-  'footer.app': 'Ilova',
-  'footer.downloadApp': 'iOS uchun yuklab olish',
-
-  // Hero
-  'hero.appBadge': 'Ilovani yuklab olish',
-
-  // Landing Screen
+  // Landing (legacy)
   'landing.subtitle': 'Sovg\'a qutisini 2 daqiqada yig\'ing',
   'landing.cta': 'Quti yaratish',
   'landing.birthday': 'Tug\'ilgan kun',
@@ -137,16 +134,29 @@ export const uz: Record<TranslationKey, string> = {
   'landing.justBecause': 'Shunchaki',
   'landing.holidays': 'Bayramlar',
 
-  // Product Selection
+  // Product Selection (legacy)
   'products.title': 'Mahsulot tanlash',
   'products.currency': 'so\'m',
   'products.items': 'mahsulot',
   'products.viewBox': 'Qutini ko\'rish',
-
-  // Product Detail
   'product.description': 'Tavsif',
   'product.inCart': 'Savatda',
   'product.add': 'Qo\'shish',
+
+  // How it works examples (legacy)
+  'howItWorks.examples': 'Sertifikat namunalari',
+  'howItWorks.cert1.name': 'The Rumi Restaurant',
+  'howItWorks.cert1.desc': 'Ikki kishilik kechki ovqat',
+  'howItWorks.cert1.price': '500 000 so\'m',
+  'howItWorks.cert2.name': 'Spa Oasis',
+  'howItWorks.cert2.desc': 'Relaks dasturi 90 daq',
+  'howItWorks.cert2.price': '350 000 so\'m',
+  'howItWorks.cert3.name': 'Beauty Room',
+  'howItWorks.cert3.desc': 'Yuz parvarishi + turmak',
+  'howItWorks.cert3.price': '280 000 so\'m',
+  'howItWorks.cert4.name': 'FitLife Gym',
+  'howItWorks.cert4.desc': '1 oylik abonement',
+  'howItWorks.cert4.price': '450 000 so\'m',
 
   // Privacy Policy
   'privacy.title': 'Maxfiylik siyosati',
@@ -168,7 +178,7 @@ export const uz: Record<TranslationKey, string> = {
   'privacy.s3.items': 'buyurtmalarni qayta ishlash|sertifikatlarni uzatish|foydalanuvchi bilan aloqa|mijozlarni qo\'llab-quvvatlash|xizmatni yaxshilash|firibgarlikning oldini olish|qonunchilik talablarini bajarish',
   'privacy.s4.title': '4. Ma\'lumotlarni uchinchi shaxslarga uzatish',
   'privacy.s4.intro': 'HappyBox ma\'lumotlarni uchinchi shaxslarga faqat quyidagi hollarda uzatishi mumkin:',
-  'privacy.s4.items': 'biznes hamkorlarga — sertifikatni bajarish uchun|to\'lov tizimlariga — to\'lovni qayta ishlash uchun|davlat organlariga — agar qonun talab qilsa',
+  'privacy.s4.items': 'biznes hamkorlarga - sertifikatni bajarish uchun|to\'lov tizimlariga - to\'lovni qayta ishlash uchun|davlat organlariga - agar qonun talab qilsa',
   'privacy.s4.note': 'Biz shaxsiy ma\'lumotlarni uchinchi shaxslarga marketing maqsadlarida sotmaymiz va uzatmaymiz.',
   'privacy.s5.title': '5. Ma\'lumotlarni saqlash va himoya qilish',
   'privacy.s5.intro': 'Biz ma\'lumotlarni quyidagilardan himoya qilish uchun oqilona texnik va tashkiliy xavfsizlik choralarini ko\'ramiz:',

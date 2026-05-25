@@ -3,15 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HappyBox — Подарочные сертификаты легко и быстро</title>
-    <meta name="description" content="HappyBox — платформа подарочных сертификатов. Рестораны, SPA, салоны красоты, спорт и впечатления. Выберите подарок и отправьте близким за пару минут." />
-    <meta property="og:title" content="HappyBox — Подарочные сертификаты легко и быстро" />
-    <meta property="og:description" content="Выберите подарочный сертификат и отправьте близким за пару минут. Рестораны, SPA, красота, спорт и впечатления." />
+
+    <!-- Primary SEO -->
+    <title>HappyBox - сертификаты для салонов: подключите салон онлайн</title>
+    <meta name="description" content="Подключите салон красоты, барбершоп или SPA к HappyBox. Продавайте подарочные сертификаты онлайн, привлекайте новых клиентов, получайте оплату сразу." />
+    <meta name="keywords" content="подключить салон, подарочные сертификаты для салона, сертификаты салон красоты, продажа сертификатов онлайн, HappyBox для бизнеса, B2B сертификаты Узбекистан" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="HappyBox" />
+
+    <!-- Favicon & app icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/favicon.svg" color="#0A84FF" />
+    <meta name="theme-color" content="#0A84FF" />
+    <meta name="apple-mobile-web-app-title" content="HappyBox" />
+    <meta name="application-name" content="HappyBox" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="HappyBox для салонов - продавайте подарочные сертификаты онлайн" />
+    <meta property="og:description" content="Подключите салон к HappyBox: новые клиенты, оплата сразу, без расходов на рекламу. Комиссия только с продажи." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://happybox.uz" />
+    <meta property="og:site_name" content="HappyBox" />
     <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="uz_UZ" />
+    <meta property="og:image" content="https://happybox.uz/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="HappyBox - продавайте подарочные сертификаты онлайн" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HappyBox для салонов - продавайте подарочные сертификаты онлайн" />
+    <meta name="twitter:description" content="Подключите свой салон, получайте новых клиентов и оплату за сертификаты сразу." />
+    <meta name="twitter:image" content="https://happybox.uz/og-image.png" />
+
+    <link rel="canonical" href="https://happybox.uz" />
+
+    <!-- Structured data: Organization + Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://happybox.uz/#organization",
+          "name": "HappyBox",
+          "url": "https://happybox.uz",
+          "logo": "https://happybox.uz/apple-touch-icon.png",
+          "image": "https://happybox.uz/og-image.png",
+          "description": "Платформа для продажи подарочных сертификатов салонов красоты, барбершопов и SPA в Ташкенте.",
+          "telephone": "+998940444581",
+          "email": "info@happybox.uz",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "UZ",
+            "addressLocality": "Ташкент"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Ташкент"
+          },
+          "sameAs": [
+            "https://t.me/happybox_manager",
+            "https://www.instagram.com/happybox.sovga/",
+            "https://apps.apple.com/uz/app/happybox-gifts/id6758584836"
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "Продажа подарочных сертификатов для салонов",
+          "provider": { "@id": "https://happybox.uz/#organization" },
+          "areaServed": {
+            "@type": "City",
+            "name": "Ташкент"
+          },
+          "audience": {
+            "@type": "BusinessAudience",
+            "audienceType": "Салоны красоты, барбершопы, SPA"
+          },
+          "offers": {
+            "@type": "Offer",
+            "description": "Комиссия 12% с продажи сертификата (8% при размещении ссылки в Instagram). Без абонентской платы."
+          }
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://happybox.uz",
+          "name": "HappyBox",
+          "inLanguage": ["ru", "uz"],
+          "publisher": { "@id": "https://happybox.uz/#organization" }
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>

@@ -104,6 +104,140 @@ app.post('/api/contact', async (req, res) => {
   }
 })
 
+interface LeadFormData {
+  name: string
+  salon: string
+  phone: string
+  city: string
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
+const LEAD_EMAIL_TO = process.env.LEAD_EMAIL_TO || 'info@happybox.uz'
+
+async function sendTelegramMessage(text: string): Promise<void> {
+  const token = process.env.TELEGRAM_BOT_TOKEN
+  const chatId = process.env.TELEGRAM_CHAT_ID
+  if (!token || !chatId) {
+    console.warn('Telegram notification skipped: TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID is missing')
+    return
+  }
+
+  const resp = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text,
+      parse_mode: 'HTML',
+      disable_web_page_preview: true,
+    }),
+  })
+
+  if (!resp.ok) {
+    const body = await resp.text().catch(() => '')
+    throw new Error(`Telegram API error ${resp.status}: ${body}`)
+  }
+}
+
+app.post('/api/lead', async (req, res) => {
+  try {
+    const { name, salon, phone, city } = (req.body || {}) as Partial<LeadFormData>
+
+    if (!name || !salon || !phone || !city) {
+      return res.status(400).json({ success: false, error: 'Missing required fields' })
+    }
+
+    const safe = {
+      name: escapeHtml(String(name).slice(0, 200)),
+      salon: escapeHtml(String(salon).slice(0, 200)),
+      phone: escapeHtml(String(phone).slice(0, 40)),
+      city: escapeHtml(String(city).slice(0, 100)),
+    }
+
+    // 1. Send Email (Resend) — skip if disabled via env
+    const emailDisabled = process.env.DISABLE_EMAIL === 'true'
+    const emailPromise: Promise<unknown> = emailDisabled
+      ? Promise.resolve({ skipped: true })
+      : resend.emails.send({
+          from: 'HappyBox <happy@happybox.uz>',
+          to: LEAD_EMAIL_TO,
+          subject: `🎯 Новая заявка от салона: ${safe.salon}`,
+          html: `
+            <h2>Новая заявка на подключение салона</h2>
+            <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
+              <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Имя</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">${safe.name}</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Салон</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">${safe.salon}</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Телефон</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">
+                  <a href="tel:${safe.phone}">${safe.phone}</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Город</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">${safe.city}</td>
+              </tr>
+            </table>
+            <p style="margin-top: 16px; color: #666; font-size: 13px;">
+              Свяжитесь с лидом в течение 24 часов.
+            </p>
+          `,
+        })
+
+    // 2. Send Telegram notification (fire and not blocking email)
+    const telegramText = [
+      '🎯 <b>Новая заявка от салона</b>',
+      '',
+      `👤 <b>Имя:</b> ${safe.name}`,
+      `💈 <b>Салон:</b> ${safe.salon}`,
+      `📞 <b>Телефон:</b> ${safe.phone}`,
+      `🏙 <b>Город:</b> ${safe.city}`,
+      '',
+      '<i>Свяжитесь с лидом в течение 24 часов.</i>',
+    ].join('\n')
+
+    const telegramPromise = sendTelegramMessage(telegramText)
+
+    // Run in parallel — fail one ≠ fail all
+    const [emailResult, telegramResult] = await Promise.allSettled([emailPromise, telegramPromise])
+
+    const emailDelivered = !emailDisabled && emailResult.status === 'fulfilled'
+    const telegramConfigured = Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID)
+    const telegramDelivered = telegramConfigured && telegramResult.status === 'fulfilled'
+
+    if (emailResult.status === 'rejected') {
+      console.error('Email send failed:', emailResult.reason)
+    }
+    if (telegramResult.status === 'rejected') {
+      console.error('Telegram send failed:', telegramResult.reason)
+    }
+
+    // Success only if at least one REAL channel actually delivered
+    if (!emailDelivered && !telegramDelivered) {
+      return res.status(500).json({ success: false, error: 'All channels failed' })
+    }
+
+    res.json({ success: true })
+  } catch (error) {
+    console.error('Error processing lead:', error)
+    res.status(500).json({ success: false, error: 'Failed to send' })
+  }
+})
+
 const APP_STORE_URL = 'https://apps.apple.com/app/id6758584836'
 
 app.get('/go/:handle', (req: express.Request, res: express.Response) => {

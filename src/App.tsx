@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { Gift } from 'lucide-react'
-import { LanguageProvider } from './i18n/LanguageContext'
+import { LanguageProvider, useLanguage } from './i18n/LanguageContext'
 import { LanguageSwitcher } from './components/LanguageSwitcher'
 import { HeroSection } from './components/landing/HeroSection'
 import { HowItWorksSection } from './components/landing/HowItWorksSection'
-import { CategoriesSection } from './components/landing/CategoriesSection'
-import { WhyHappyBoxSection } from './components/landing/WhyHappyBoxSection'
 import { ForBusinessSection } from './components/landing/ForBusinessSection'
 import { BusinessStepsSection } from './components/landing/BusinessStepsSection'
 import { PricingSection } from './components/landing/PricingSection'
+import { LeadFormSection } from './components/landing/LeadFormSection'
+import { ForCustomersBlock } from './components/landing/ForCustomersBlock'
 import { Footer } from './components/landing/Footer'
 import { PrivacyPolicyScreen } from './screens/PrivacyPolicyScreen'
 
@@ -16,6 +16,7 @@ type Page = 'landing' | 'privacy'
 
 function AppContent() {
   const [page, setPage] = useState<Page>('landing')
+  const { t } = useLanguage()
 
   if (page === 'privacy') {
     return (
@@ -54,16 +55,29 @@ function AppContent() {
             </div>
             <span className="text-lg font-semibold text-gray-900">HappyBox</span>
           </div>
-          <LanguageSwitcher />
+          <div className="flex items-center gap-2 sm:gap-4">
+            <a
+              href="#lead"
+              className="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-[#0A84FF] hover:text-[#0070E0] transition-colors"
+            >
+              {t('footer.business')}
+            </a>
+            <LanguageSwitcher />
+          </div>
         </div>
       </nav>
+
+      {/* B2B-first funnel: hook → process → value → terms → form */}
       <HeroSection />
       <HowItWorksSection />
-      <CategoriesSection />
-      <WhyHappyBoxSection />
       <ForBusinessSection />
       <BusinessStepsSection />
       <PricingSection />
+      <LeadFormSection />
+
+      {/* Compact B2C block for accidental visitors who want to buy a gift */}
+      <ForCustomersBlock />
+
       <Footer
         onNavigateToPrivacy={() => {
           setPage('privacy')
