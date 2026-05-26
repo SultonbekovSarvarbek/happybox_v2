@@ -9,7 +9,7 @@ export function HeroSection() {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-        style={{ backgroundImage: 'url(/bg.png)' }}
+        style={{ backgroundImage: 'url(/bg-2.png)' }}
         aria-hidden="true"
       />
       {/* Soft white overlay so the text stays readable on top of the bg */}

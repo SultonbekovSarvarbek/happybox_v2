@@ -12,8 +12,17 @@ export function BusinessStepsSection() {
   const { t } = useLanguage()
 
   return (
-    <section className="py-20 sm:py-28 px-4 sm:px-6 bg-gray-50">
-      <div className="max-w-4xl mx-auto">
+    <section className="relative py-20 sm:py-28 px-4 sm:px-6 bg-gray-50 overflow-hidden">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+        style={{ backgroundImage: 'url(/connect.png)' }}
+        aria-hidden="true"
+      />
+      {/* Soft white overlay so the content stays readable on top of the bg */}
+      <div className="absolute inset-0 bg-gray-50/80 pointer-events-none" aria-hidden="true" />
+
+      <div className="relative max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-[#0A84FF] font-semibold text-sm uppercase tracking-widest mb-3">
             {t('businessSteps.label')}
