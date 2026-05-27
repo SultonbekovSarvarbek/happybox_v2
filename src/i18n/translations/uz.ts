@@ -21,9 +21,9 @@ export const uz: Record<TranslationKey, string> = {
   'howItWorks.step1.title': '1. Ariza qoldirasiz',
   'howItWorks.step1.description': 'Qisqa shaklni to\'ldirasiz - menejer bir kun ichida bog\'lanadi.',
   'howItWorks.step2.title': '2. Vitrinani sozlaymiz',
-  'howItWorks.step2.description': 'Salonni ilovaga ulaymiz, xizmatlar va suratlarni qo\'shamiz - bepul.',
+  'howItWorks.step2.description': 'Salonni ilovaga ulaymiz, xizmatlarni qo\'shamiz.',
   'howItWorks.step3.title': '3. Mijoz sertifikatni sotib oladi',
-  'howItWorks.step3.description': 'Xaridor ilovada to\'laydi, pul sizga tushadi.',
+  'howItWorks.step3.description': 'Mijoz o\'ziga sotib oladi yoki yaqinlariga sovg\'a qiladi - ilovada to\'laydi, pul sizga tushadi.',
   'howItWorks.step4.title': '4. Mijoz salonga keladi',
   'howItWorks.step4.description': 'Mehmon QR-kodni ko\'rsatadi - siz xizmatni amalga oshirasiz. Hammasi shaffof.',
 

@@ -36,7 +36,12 @@ export function HowItWorksSection() {
             {t('howItWorks.label')}
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
-            {t('howItWorks.title')}
+            {t('howItWorks.title').split('HappyBox').map((part, i, arr) => (
+              <span key={i}>
+                {part}
+                {i < arr.length - 1 && <span className="text-[#0A84FF]">HappyBox</span>}
+              </span>
+            ))}
           </h2>
         </div>
 

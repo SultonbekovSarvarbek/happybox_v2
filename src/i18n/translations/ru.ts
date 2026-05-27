@@ -19,9 +19,9 @@ export const ru = {
   'howItWorks.step1.title': '1. Оставляете заявку',
   'howItWorks.step1.description': 'Заполняете короткую форму - менеджер связывается в течение дня.',
   'howItWorks.step2.title': '2. Настраиваем витрину',
-  'howItWorks.step2.description': 'Подключаем ваш салон в приложение, добавляем услуги и фото - бесплатно.',
+  'howItWorks.step2.description': 'Подключаем ваш салон в приложение, добавляем услуги.',
   'howItWorks.step3.title': '3. Клиент покупает сертификат',
-  'howItWorks.step3.description': 'Покупатель оплачивает в приложении, деньги поступают вам.',
+  'howItWorks.step3.description': 'Клиент покупает себе или дарит близким - оплачивает в приложении, деньги поступают вам.',
   'howItWorks.step4.title': '4. Клиент приходит в салон',
   'howItWorks.step4.description': 'Гость показывает QR-код - вы оказываете услугу. Всё прозрачно.',
 

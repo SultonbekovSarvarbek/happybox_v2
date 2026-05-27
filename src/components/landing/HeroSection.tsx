@@ -26,7 +26,12 @@ export function HeroSection() {
         </h1>
 
         <p className="text-base sm:text-lg text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
-          {t('hero.subtitle')}
+          {t('hero.subtitle').split('HappyBox').map((part, i, arr) => (
+            <span key={i}>
+              {part}
+              {i < arr.length - 1 && <span className="text-[#0A84FF] font-medium">HappyBox</span>}
+            </span>
+          ))}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
