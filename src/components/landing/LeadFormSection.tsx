@@ -7,7 +7,7 @@ type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 const API_BASE = import.meta.env.VITE_API_URL || ''
 
-// +998 XX XXX XX XX — оставляем только цифры после кода страны
+// +998 XX XXX XX XX - оставляем только цифры после кода страны
 function formatUzPhone(raw: string) {
   const digits = raw.replace(/\D/g, '').replace(/^998/, '').slice(0, 9)
   const parts = [

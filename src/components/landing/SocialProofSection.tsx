@@ -2,7 +2,7 @@ import { Quote } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 import type { TranslationKey } from '@/i18n/translations/ru'
 
-// ⚠️ REPLACE: имена партнёров — заменить на реальные названия салонов
+// ⚠️ REPLACE: имена партнёров - заменить на реальные названия салонов
 const PARTNER_LOGOS = [
   'Beauty Room',
   'BarberHouse',
@@ -54,7 +54,7 @@ export function SocialProofSection() {
           ))}
         </div>
 
-        {/* Partner logos strip (текстовая полоса — замените на <img> когда будут лого) */}
+        {/* Partner logos strip (текстовая полоса - замените на <img> когда будут лого) */}
         <div className="text-center mb-14">
           <p className="text-xs uppercase tracking-widest text-gray-400 mb-5">
             {t('proof.partners')}
