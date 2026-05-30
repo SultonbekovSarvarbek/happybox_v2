@@ -1,4 +1,4 @@
-import { Check, Instagram } from 'lucide-react'
+import { Check, Instagram, ShieldCheck, X } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 import type { TranslationKey } from '@/i18n/translations/ru'
 import { track } from '@/lib/amplitude'
@@ -54,7 +54,7 @@ export function PricingSection() {
         </div>
 
         {/* Terms */}
-        <div className="rounded-2xl border border-gray-100 p-6 sm:p-8 mb-12">
+        <div className="rounded-2xl border border-gray-100 p-6 sm:p-8 mb-8">
           <ul className="space-y-3">
             {(['pricing.term1', 'pricing.term2'] as TranslationKey[]).map((key) => (
               <li key={key} className="flex items-start gap-2.5 text-sm text-gray-600">
@@ -63,6 +63,34 @@ export function PricingSection() {
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Comparison: HappyBox vs ad budgets */}
+        <div className="rounded-2xl border border-gray-100 bg-gray-50/60 p-6 sm:p-8 mb-12">
+          <p className="text-center text-base sm:text-lg font-semibold text-gray-900 mb-5">
+            {t('pricing.compare.title' as TranslationKey)}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+            <div className="flex items-start gap-3 rounded-xl bg-white border border-green-100 p-4">
+              <div className="w-8 h-8 shrink-0 rounded-lg bg-green-50 flex items-center justify-center">
+                <ShieldCheck className="w-4 h-4 text-green-600" />
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                {t('pricing.compare.us' as TranslationKey)}
+              </p>
+            </div>
+            <div className="flex items-start gap-3 rounded-xl bg-white border border-gray-100 p-4">
+              <div className="w-8 h-8 shrink-0 rounded-lg bg-gray-100 flex items-center justify-center">
+                <X className="w-4 h-4 text-gray-400" />
+              </div>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                {t('pricing.compare.ads' as TranslationKey)}
+              </p>
+            </div>
+          </div>
+          <p className="text-xs text-gray-500 text-center">
+            {t('pricing.compare.note' as TranslationKey)}
+          </p>
         </div>
 
         {/* CTA */}

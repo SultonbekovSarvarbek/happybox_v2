@@ -1,5 +1,9 @@
+import { Check } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
+import type { TranslationKey } from '@/i18n/translations/ru'
 import { track } from '@/lib/amplitude'
+
+const benefitBullets: TranslationKey[] = ['hero.bullet1', 'hero.bullet2', 'hero.bullet3']
 
 export function HeroSection() {
   const { t } = useLanguage()
@@ -50,6 +54,17 @@ export function HeroSection() {
             {t('hero.business')}
           </a>
         </div>
+
+        <p className="mt-4 text-xs text-gray-400">{t('hero.ctaMicro')}</p>
+
+        <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600">
+          {benefitBullets.map((key) => (
+            <li key={key} className="inline-flex items-center gap-1.5">
+              <Check className="w-4 h-4 text-[#0A84FF]" />
+              {t(key)}
+            </li>
+          ))}
+        </ul>
 
         <a
           href="https://apps.apple.com/uz/app/happybox-gifts/id6758584836"

@@ -3,10 +3,14 @@ import { Gift } from 'lucide-react'
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext'
 import { LanguageSwitcher } from './components/LanguageSwitcher'
 import { HeroSection } from './components/landing/HeroSection'
+import { SocialProofSection } from './components/landing/SocialProofSection'
 import { HowItWorksSection } from './components/landing/HowItWorksSection'
 import { ForBusinessSection } from './components/landing/ForBusinessSection'
+import { AudienceSection } from './components/landing/AudienceSection'
+import { IncomeCalculatorSection } from './components/landing/IncomeCalculatorSection'
 import { BusinessStepsSection } from './components/landing/BusinessStepsSection'
 import { PricingSection } from './components/landing/PricingSection'
+import { FaqSection } from './components/landing/FaqSection'
 import { LeadFormSection } from './components/landing/LeadFormSection'
 import { ForCustomersBlock } from './components/landing/ForCustomersBlock'
 import { Footer } from './components/landing/Footer'
@@ -67,12 +71,16 @@ function AppContent() {
         </div>
       </nav>
 
-      {/* B2B-first funnel: hook → process → value → terms → form */}
+      {/* B2B-first funnel: hook → trust → process → value → fit → income → terms → objections → form */}
       <HeroSection />
+      <SocialProofSection />
       <HowItWorksSection />
       <ForBusinessSection />
+      <AudienceSection />
+      <IncomeCalculatorSection />
       <BusinessStepsSection />
       <PricingSection />
+      <FaqSection />
       <LeadFormSection />
 
       {/* Compact B2C block for accidental visitors who want to buy a gift */}

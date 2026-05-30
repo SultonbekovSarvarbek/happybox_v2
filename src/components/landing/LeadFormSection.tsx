@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Check, Send } from 'lucide-react'
+import { Check, Phone, Send } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { track } from '@/lib/amplitude'
 
@@ -7,13 +7,30 @@ type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 const API_BASE = import.meta.env.VITE_API_URL || ''
 
+// +998 XX XXX XX XX — оставляем только цифры после кода страны
+function formatUzPhone(raw: string) {
+  const digits = raw.replace(/\D/g, '').replace(/^998/, '').slice(0, 9)
+  const parts = [
+    digits.slice(0, 2),
+    digits.slice(2, 5),
+    digits.slice(5, 7),
+    digits.slice(7, 9),
+  ].filter(Boolean)
+  return parts.length ? `+998 ${parts.join(' ')}` : '+998 '
+}
+
+function isValidUzPhone(value: string) {
+  return value.replace(/\D/g, '').length === 12 // 998 + 9 digits
+}
+
 export function LeadFormSection() {
   const { t } = useLanguage()
   const [status, setStatus] = useState<SubmitStatus>('idle')
+  const [consent, setConsent] = useState(true)
   const [form, setForm] = useState({
     name: '',
     salon: '',
-    phone: '',
+    phone: '+998 ',
     city: '',
   })
 
@@ -24,6 +41,11 @@ export function LeadFormSection() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (status === 'submitting') return
+    if (!consent) return
+    if (!isValidUzPhone(form.phone)) {
+      setStatus('error')
+      return
+    }
 
     setStatus('submitting')
     track('lead_form_submitted', { city: form.city })
@@ -36,7 +58,7 @@ export function LeadFormSection() {
       })
       if (!res.ok) throw new Error('bad status')
       setStatus('success')
-      setForm({ name: '', salon: '', phone: '', city: '' })
+      setForm({ name: '', salon: '', phone: '+998 ', city: '' })
     } catch (err) {
       console.error(err)
       setStatus('error')
@@ -63,15 +85,27 @@ export function LeadFormSection() {
             <div className="w-14 h-14 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-5">
               <Check className="w-7 h-7 text-green-500" />
             </div>
-            <p className="text-lg font-medium text-gray-900 mb-2">{t('lead.success')}</p>
-            <a
-              href="https://t.me/happybox_manager"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#0A84FF] hover:underline mt-4 text-sm"
-            >
-              @happybox_manager
-            </a>
+            <p className="text-xl font-semibold text-gray-900 mb-2">{t('lead.success')}</p>
+            <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-md mx-auto">
+              {t('lead.successDetail')}
+            </p>
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href="https://t.me/happybox_manager"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0A84FF] hover:bg-[#0070E0] text-white text-sm font-medium transition-all"
+              >
+                Telegram: @happybox_manager
+              </a>
+              <a
+                href="tel:+998940444581"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-gray-200 hover:border-[#0A84FF] hover:text-[#0A84FF] text-gray-700 text-sm font-medium transition-all"
+              >
+                <Phone className="w-4 h-4" />
+                +998 94 044 45 81
+              </a>
+            </div>
           </div>
         ) : (
           <form
@@ -116,9 +150,13 @@ export function LeadFormSection() {
                 <input
                   id="lead-phone"
                   type="tel"
+                  inputMode="tel"
                   required
                   value={form.phone}
-                  onChange={(e) => update('phone', e.target.value)}
+                  onChange={(e) => update('phone', formatUzPhone(e.target.value))}
+                  onFocus={(e) => {
+                    if (!e.target.value) update('phone', '+998 ')
+                  }}
                   placeholder={t('lead.phonePlaceholder')}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0A84FF] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                 />
@@ -140,10 +178,22 @@ export function LeadFormSection() {
               </div>
             </div>
 
+            <label className="mt-6 flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                className="mt-0.5 w-4 h-4 rounded border-gray-300 text-[#0A84FF] focus:ring-2 focus:ring-blue-100 cursor-pointer"
+              />
+              <span className="text-xs sm:text-sm text-gray-500 leading-relaxed">
+                {t('lead.consent')}
+              </span>
+            </label>
+
             <button
               type="submit"
-              disabled={status === 'submitting'}
-              className="mt-7 w-full inline-flex items-center justify-center gap-2 bg-[#0A84FF] hover:bg-[#0070E0] disabled:opacity-60 disabled:cursor-not-allowed text-white px-8 py-4 text-base font-medium rounded-xl shadow-lg shadow-blue-500/15 transition-all hover:shadow-xl hover:shadow-blue-500/25"
+              disabled={status === 'submitting' || !consent}
+              className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-[#0A84FF] hover:bg-[#0070E0] disabled:opacity-60 disabled:cursor-not-allowed text-white px-8 py-4 text-base font-medium rounded-xl shadow-lg shadow-blue-500/15 transition-all hover:shadow-xl hover:shadow-blue-500/25"
             >
               <Send className="w-4 h-4" />
               {status === 'submitting' ? t('lead.submitting') : t('lead.submit')}
